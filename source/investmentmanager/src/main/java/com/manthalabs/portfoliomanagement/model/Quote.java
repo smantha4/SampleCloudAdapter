@@ -1,6 +1,6 @@
 package com.manthalabs.portfoliomanagement.model;
 
-public class Qoute {
+public class Quote {
 	
 	private String ticker;
 	private String currentPrice;

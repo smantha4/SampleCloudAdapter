@@ -3,22 +3,25 @@ package com.manthalabs.portfoliomanagement.resource;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.manthalabs.portfoliomanagement.model.Qoute;
+import com.manthalabs.portfoliomanagement.model.Quote;
+import com.manthalabs.portfoliomanagement.service.YahooFinanceQuoteService;
 
 @Component
-@Path("/quotes")
+@Path("/quote")
 public class QuotesResource {
+	
+	@Autowired
+	private YahooFinanceQuoteService yahooFinanceQuoteService;
 
 	@GET
 	@Produces("application/json")
-	public Qoute quote() {
-		Qoute q = new Qoute();
-		q.setTicker("AMZN");
-		q.setCurrentPrice("600");
-		return q;
+	public Quote quote(@QueryParam("symbol") String symbol) {
+		return yahooFinanceQuoteService.getQuote(symbol);
 	}
 
 }

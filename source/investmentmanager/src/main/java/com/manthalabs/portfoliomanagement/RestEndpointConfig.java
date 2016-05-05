@@ -10,7 +10,6 @@ public class RestEndpointConfig extends ResourceConfig  {
 
 	public RestEndpointConfig() {
 		packages("com.manthalabs.portfoliomanagement.resource");
-		register(QuotesResource.class);
 	}
 
 }
