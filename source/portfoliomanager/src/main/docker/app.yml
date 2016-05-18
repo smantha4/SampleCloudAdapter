@@ -1,0 +1,16 @@
+version: '2'
+services:
+    portfoliomanager-app:
+        image: portfoliomanager
+        external_links:
+            - portfoliomanager-mongodb:mongodb
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod
+            - SPRING_DATA_MONGODB_URI=mongodb://mongodb:27017
+            - SPRING_DATA_MONGODB_DATABASE=portfoliomanager
+        ports:
+            - 8080:8080
+    portfoliomanager-mongodb:
+        extends:
+            file: mongodb.yml
+            service: portfoliomanager-mongodb

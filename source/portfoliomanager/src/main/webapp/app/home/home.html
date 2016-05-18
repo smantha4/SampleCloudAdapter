@@ -1,0 +1,56 @@
+<md-content class="md-padding">
+    <div ng-cloak>
+        <md-input-container>
+            <label>Symbol</label>
+            <input type="text" ng-model="symbol">
+        </md-input-container>
+        <md-button class="md-raised md-primary" ng-click="getQuote()">Get Price</md-button>
+        <div ng-show='showQuotes'>
+            <div class="layout-row">
+                <div flex="50">
+                    <md-card ng-class="quote.change > 0 ? 'palette-Green-300 bg' : 'palette-Red-200 bg'">
+                        <md-card-title>
+                            <md-card-title-text>
+                                <span class="md-headline">{{quote.name}} - {{symbol}}</span>
+                            </md-card-title-text>
+                        </md-card-title>
+                        <md-card-content>
+                            <h2>{{quote.currentPrice}} 
+                        <span ng-class="quote.change > 0 ? 'palette-Green-700 text' : 'palette-Red-700 text'">{{quote.change}}</span> </h2>
+                            <md-grid-list md-cols="4" md-gutter="1em" md-row-height="1:1">
+                                <md-grid-tile class="palette-Light-Blue-300 bg">
+                                    <p class='md-title'>{{quote.daysLow}} - {{quote.daysHigh}}</p>
+                                    <md-grid-tile-footer>
+                                        <h4>Days low/high</h4>
+                                    </md-grid-tile-footer>
+                                </md-grid-tile>
+                                <md-grid-tile class="palette-Teal-300 bg">
+                                    <p class='md-title'> {{quote.marketCapitalization}}</p>
+                                    <md-grid-tile-footer>
+                                        <h4>Market Cap</h4>
+                                    </md-grid-tile-footer>
+                                </md-grid-tile>
+                                <md-grid-tile class="palette-Indigo-300 bg">
+                                    <p class='md-title'>{{quote.dividendYield}}</p>
+                                    <md-grid-tile-footer>
+                                        <h3>dividend</h3>
+                                    </md-grid-tile-footer>
+                                </md-grid-tile>
+                                <md-grid-tile class="palette-Indigo-300 bg">
+                                    <md-grid-tile-footer>
+                                        <h3>This is a footer</h3>
+                                    </md-grid-tile-footer>
+                                </md-grid-tile>
+                                <md-grid-tile>
+                                    <md-grid-tile-footer>
+                                        <h3>This is a footer</h3>
+                                    </md-grid-tile-footer>
+                                </md-grid-tile>
+                            </md-grid-list>
+                        </md-card-content>
+                    </md-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</md-content>

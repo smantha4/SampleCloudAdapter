@@ -1,0 +1,27 @@
+<md-toolbar class="md-padding">
+    <div class="md-toolbar-tools">
+        <span>Portfolio</span>
+        <!-- fill up the space between left and right area -->
+        <span flex></span>
+        <md-button ng-href="#/watchlist">
+            Watchlist
+        </md-button>
+        <md-button>
+            Portfolio
+        </md-button>
+        <md-menu>
+            <!-- Trigger element is a md-button with an icon -->
+            <md-button ng-click="$mdOpenMenu($event)" class="md-icon-button" aria-label="Open sample menu">
+                Account
+            </md-button>
+            <md-menu-content>
+                <md-menu-item>
+                    <md-button ng-click="vm.login()">Sign in</md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button ng-click="vm.logout()">Sign in</md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+    </div>
+</md-toolbar>
