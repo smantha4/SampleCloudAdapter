@@ -3,6 +3,11 @@
 
     angular
         .module('portfoliomanagerApp')
+        .config(function($mdIconProvider) {
+            $mdIconProvider
+                .iconSet('social', 'img/icons/sets/social-icons.svg', 16)
+                .defaultIconSet('img/icons/sets/core-icons.svg', 16);
+        })
         .config(stateConfig);
 
     stateConfig.$inject = ['$stateProvider'];

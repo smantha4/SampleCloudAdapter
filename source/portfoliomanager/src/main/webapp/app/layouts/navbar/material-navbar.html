@@ -12,14 +12,15 @@
         <md-menu>
             <!-- Trigger element is a md-button with an icon -->
             <md-button ng-click="$mdOpenMenu($event)" class="md-icon-button" aria-label="Open sample menu">
-                Account
+                            <i class="material-icons">account_circle</i>
+
             </md-button>
             <md-menu-content>
                 <md-menu-item>
                     <md-button ng-click="vm.login()">Sign in</md-button>
                 </md-menu-item>
                 <md-menu-item>
-                    <md-button ng-click="vm.logout()">Sign in</md-button>
+                    <md-button ng-click="vm.logout()">Sign out</md-button>
                 </md-menu-item>
             </md-menu-content>
         </md-menu>
