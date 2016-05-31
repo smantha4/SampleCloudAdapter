@@ -1,0 +1,370 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"la",
+				"layout-column	 angular-material.css"
+			],
+			[
+				"ng-cl",
+				"ng-click	AngularJS"
+			],
+			[
+				"md-bottom-r",
+				"md-fab-bottom-right	 angular-material.css"
+			],
+			[
+				"palette-W",
+				"palette-White-Text	 palette.css"
+			],
+			[
+				"l",
+				"layout-padding	 angular-material.css"
+			],
+			[
+				"lay",
+				"layout-column	 angular-material.css"
+			],
+			[
+				"getWatch",
+				"getWatchList"
+			],
+			[
+				"funct",
+				"function without name"
+			],
+			[
+				"u",
+				"ul	Tag"
+			],
+			[
+				"pall",
+				"palette-Lime-300	 palette.css"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"e",
+				"export"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "package.json",
+			"settings":
+			{
+				"buffer_size": 1841,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "prett",
+		"selected_items":
+		[
+			[
+				"prett",
+				"HTMLPrettify"
+			],
+			[
+				"",
+				"About"
+			],
+			[
+				"path",
+				"Insert Path Relative to Project"
+			],
+			[
+				"ins",
+				"Insert Directory Relative to Project"
+			],
+			[
+				"In",
+				"Package Control: Install Package"
+			],
+			[
+				"Pre",
+				"HTMLPrettify"
+			],
+			[
+				"Ins",
+				"Package Control: Install Package"
+			],
+			[
+				"pre",
+				"HTMLPrettify"
+			],
+			[
+				"INstall",
+				"Package Control: Install Package"
+			],
+			[
+				"INs",
+				"Package Control: Install Package"
+			],
+			[
+				"pretty",
+				"HTMLPrettify"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 890.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"load_external_files"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/srirammantha/source/portfoliomanager"
+	],
+	"file_history":
+	[
+		"/Users/srirammantha/source/portfoliomanager/src/main/webapp/app/home/watchlist.html",
+		"/Users/srirammantha/source/portfoliomanager/src/main/webapp/app/home/home.controller.js",
+		"/Users/srirammantha/source/portfoliomanager/src/main/webapp/app/home/home.state.js",
+		"/Users/srirammantha/source/portfoliomanager/bower.json",
+		"/Users/srirammantha/source/portfoliomanager/src/main/webapp/app/app.module.js",
+		"/Users/srirammantha/source/portfoliomanager/src/main/webapp/content/css/colors.css",
+		"/Users/srirammantha/source/portfoliomanager/src/main/webapp/index.html",
+		"/Users/srirammantha/source/agility/karaf/log/agility.log",
+		"/Users/srirammantha/source/agility/rpm/SPECS/agility-platform-server.spec"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"currentWatchlist",
+			"fab",
+			"plus",
+			"h4",
+			"\">",
+			"palette",
+			"color",
+			"Blue",
+			"documentation",
+			"vendor.css",
+			"vend",
+			"colors",
+			"material",
+			"VMNetworkINterface",
+			"delete from VMNetwork",
+			"delete from VMNet",
+			"VMNetworkInterface",
+			"fe80::250:56ff:fe9a:658a",
+			"Authorization failedAuthorization failed",
+			"permission",
+			"ExceptionInInitializerErrorExceptionInInitializerErrorExceptionInInitializerError",
+			"worked"
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "package.json",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1841,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								}
+							],
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.CSS Extended Completions":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "portfolio.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"home",
+				"src/main/webapp/app/home/home.html"
+			],
+			[
+				"bowe",
+				"portfoliomanager/bower.json"
+			],
+			[
+				"index.html",
+				"portfoliomanager/src/main/webapp/index.html"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 317.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -1,0 +1,17 @@
+<md-content class="layout-column" layout-padding layout-wrap>
+    <md-input-container>
+        <label>stock</label>
+        <input type="text" ng-model="newWatchlistem.symbol">
+    </md-input-container>
+    <md-input-container>
+        <label>Qty</label>
+        <input type="text" ng-model="newWatchlistem.qty">
+    </md-input-container>
+    <md-input-container>
+        <label>Price bought</label>
+        <input type="text" ng-model="newWatchlistem.priceBought">
+    </md-input-container>
+    <md-datepicker ng-model="newWatchlistem.datebought" required="true">
+    </md-datepicker>
+    <md-button class="md-raised" ng-click="save()" md-ripple-size="full">save</md-button>
+</md-content>
