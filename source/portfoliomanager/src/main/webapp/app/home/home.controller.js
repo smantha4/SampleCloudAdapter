@@ -88,6 +88,15 @@
             });
         }
 
+        $scope.getAllWatchlistDetails = function() {
+             var allWatchlistDetails = [];
+
+                  for(var watchlist in $scope.watchlists) {
+                    var id = watchlist.id;
+
+                  }
+        }
+
         $scope.getMessagesForWatchlist = function() {
             $http.get('/api/watchlist/messages?watchlistid=' + $scope.currentWatchlist).
             success(function(data) {
@@ -106,6 +115,7 @@
             var useFullScreen = ($mdMedia('sm') || $mdMedia('xs')) && $scope.customFullscreen;
             $mdDialog.show({
                     controller: NewWatchlistController,
+                    scope: $scope.$new(),
                     templateUrl: 'app/home/watchlist-add-dialog.html',
                     parent: angular.element(document.body),
                     clickOutsideToClose: true,
@@ -129,7 +139,7 @@
          */
         function NewWatchlistController($scope, $mdDialog) {
 
-            $scope.newWatchlistem = new Object();
+           
             $scope.hide = function() {
                 $mdDialog.hide();
             };
@@ -137,7 +147,7 @@
                 $mdDialog.cancel();
             };
             $scope.save = function(answer) {
-                $http.post('/api/watchlist', newWatchlist)
+                $http.post('/api/watchlist', $scope.newWatchlist)
                     .success(function(data) {
                         //Reload the watchlist
                         $scope.getWatchList();
@@ -198,6 +208,25 @@
                     });
 
             };
+        }
+
+
+        /**
+         * Delete stock item
+         * @param  {[type]} symbol [description]
+         * @return {[type]}        [description]
+         */
+        $scope.deleteStockItem = function(symbol) {
+
+            $http.delete('/api/watchlist/' + $scope.currentWatchlist + '/watchliststockitem/' + symbol)
+                .success(function(data) {
+                    $scope.getWatchList();
+                });
+
+        }
+
+        $scope.editStockItem = function(symbol){
+            
         }
 
         $scope.getWatchLists();

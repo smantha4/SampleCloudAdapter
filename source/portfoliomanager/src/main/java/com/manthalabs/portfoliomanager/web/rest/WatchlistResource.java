@@ -1,5 +1,8 @@
 package com.manthalabs.portfoliomanager.web.rest;
 
+import java.util.List;
+
+import org.apache.commons.lang.Validate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -12,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.manthalabs.portfoliomanager.analytics.WatchlistStockItemAnalysis;
 import com.manthalabs.portfoliomanager.domain.Watchlist;
+import com.manthalabs.portfoliomanager.repository.WatchlistItemAnalysisRepository;
 import com.manthalabs.portfoliomanager.repository.WatchlistRepository;
 import com.manthalabs.portfoliomanager.service.WatchlistService;
 import com.manthalabs.portfoliomanager.web.rest.dto.AddWatchlistStockItem;
@@ -30,6 +35,9 @@ public class WatchlistResource {
 
 	@Autowired
 	private WatchlistRepository watchlistRepository;
+
+	@Autowired
+	private WatchlistItemAnalysisRepository watchlistItemAnalysisRepository;
 
 	/**
 	 * Get list of watchlists
@@ -70,7 +78,8 @@ public class WatchlistResource {
 	}
 
 	@RequestMapping(value = "/watchlist", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-	public void createWatchlist(String name) {
+	public void createWatchlist(@RequestBody String name) {
+		Validate.notNull(name, "Watchlistname cannot be null");
 		Watchlist w = new Watchlist();
 		w.setName(name);
 		watchlistRepository.save(w);
@@ -125,9 +134,18 @@ public class WatchlistResource {
 	@RequestMapping(value = "/watchlist/messages", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public MessagesDTO getMessagesForWatchlist(@RequestParam("watchlistid") String watchlistid) {
 
+		Watchlist w = watchlistRepository.findOne(watchlistid);
+
+		List<String> stocks = w.getStocks();
+
 		MessagesDTO ms = new MessagesDTO();
-		ms.getMessages().add(new MessageDTO("Apple stock has rise more than 10% from the time your have added"));
-		ms.getMessages().add(new MessageDTO("GOOGLE stock is at it all time high"));
+
+		stocks.stream().forEach(s -> {
+			WatchlistStockItemAnalysis wsa = watchlistItemAnalysisRepository.findOne(s);
+			if (wsa != null && wsa.getResults() != null) {
+				wsa.getResults().stream().forEach(a -> ms.getMessages().add(new MessageDTO(a.getMessage())));
+			}
+		});
 
 		return ms;
 	}

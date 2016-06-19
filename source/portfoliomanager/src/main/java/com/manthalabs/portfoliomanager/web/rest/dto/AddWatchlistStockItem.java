@@ -3,7 +3,7 @@ package com.manthalabs.portfoliomanager.web.rest.dto;
 public class AddWatchlistStockItem {
 
 	private String symbol;
-	private String qty;
+	private String qty = "0";
 	private String priceBought;
 
 	public String getSymbol() {

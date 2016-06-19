@@ -1,1 +1,4 @@
-app.css
+/* override the material icons */
+.material-icons {
+  font-size: 18px;
+}

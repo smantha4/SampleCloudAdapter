@@ -8,6 +8,7 @@ import javax.inject.Inject;
 
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang.Validate;
+import org.joda.time.DateTime;
 import org.springframework.stereotype.Service;
 
 import com.manthalabs.portfoliomanager.domain.Quote;
@@ -15,10 +16,13 @@ import com.manthalabs.portfoliomanager.domain.Watchlist;
 import com.manthalabs.portfoliomanager.domain.WatchlistItem;
 import com.manthalabs.portfoliomanager.repository.WatchlistItemRepository;
 import com.manthalabs.portfoliomanager.repository.WatchlistRepository;
+import com.manthalabs.portfoliomanager.visitor.GainLossCalculator;
 import com.manthalabs.portfoliomanager.web.rest.dto.AddWatchlistStockItem;
 import com.manthalabs.portfoliomanager.web.rest.dto.WatchListStockItemDTO;
 import com.manthalabs.portfoliomanager.web.rest.dto.WatchlistListDTO;
 import com.manthalabs.portfoliomanager.web.rest.dto.WatchlistListDTO.WatchlistNameDTO;
+
+import net.logstash.logback.encoder.org.apache.commons.lang.StringUtils;
 
 @Service
 public class WatchlistService {
@@ -62,7 +66,16 @@ public class WatchlistService {
 
 		return w.getStocks().parallelStream().map(s -> {
 			WatchListStockItemDTO ws = new WatchListStockItemDTO();
+
+			WatchlistItem wi = watchlistItemRepository.findOne(s);
+
 			Quote q = yahooFinanceQuoteService.getQuote(s);
+
+			GainLossCalculator gainLossCalculator = new GainLossCalculator(q);
+			wi.accept(gainLossCalculator);
+
+			ws.setQty(wi.getQty());
+			ws.setGain(String.valueOf(wi.getOverallGainLoss()));
 			ws.setQuote(q);
 			return ws;
 
@@ -95,8 +108,24 @@ public class WatchlistService {
 			if (wi == null) {
 				wi = new WatchlistItem();
 				wi.setStock(addWatchlistStockItem.getSymbol());
+				wi.setQty(addWatchlistStockItem.getQty());
+				wi.setValueWhenAdded(
+						yahooFinanceQuoteService.getQuote(addWatchlistStockItem.getSymbol()).getCurrentPrice());
+
+				// Add new stock item keeping track of the watch list
+				if (StringUtils.isNotEmpty(addWatchlistStockItem.getQty())) {
+					wi.addQtyItem(watchlist, Float.valueOf(addWatchlistStockItem.getQty()), DateTime.now().toString(),
+							Float.valueOf(yahooFinanceQuoteService.getQuote(addWatchlistStockItem.getSymbol())
+									.getCurrentPrice()));
+				}
+
 			} else {
-				// Lets merge the QTy
+				// Add a new entry
+				if (StringUtils.isNotEmpty(addWatchlistStockItem.getQty())) {
+					wi.addQtyItem(watchlist, Float.valueOf(addWatchlistStockItem.getQty()), DateTime.now().toString(),
+							Float.valueOf(yahooFinanceQuoteService.getQuote(addWatchlistStockItem.getSymbol())
+									.getCurrentPrice()));
+				}
 			}
 			watchlistItemRepository.save(wi);
 		}

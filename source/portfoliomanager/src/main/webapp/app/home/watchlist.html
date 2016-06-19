@@ -21,23 +21,32 @@
     <md-content class="md-padding" flex>
         <div ng-cloak>
             <md-list class="md-padding">
-                <div ng-repeat="detail in watchlistDetail" class="md-margin md-padding palette-Lime-300 bg">
-                    <div layout="row" layout-wrap>
-                        <div flex="10">{{detail.quote.ticker}}</div>
-                        <div flex="10"><span class="md-caption">Name:</span>{{detail.quote.name}}</div>
-                        <div flex="10"><span class="md-caption">Symbol:</span>{{detail.quote.currentPrice}}</div>
-                        <div flex="10"><span class="md-caption">change:</span>{{detail.quote.change}}</div>
-                        <div flex="10"><span class="md-caption">low:</span>{{detail.quote.daysLow}}</div>
-                        <div flex="10"><span class="md-caption">high:</span>{{detail.quote.daysHigh}}</div>
-                        <div flex="10"><span class="md-caption">mCap:</span>{{detail.quote.marketCapitalization}}</div>
-                        <div flex=><span class="md-caption">DY:</span>{{detail.quote.dividendYield}}</div>
-                        <md-button flex="5" class="md-icon-button" ng-click="deleteStoclItem()">
-                            <i class="material-icons">delete</i>
-                        </md-button>
-                        <md-button flex="5" class="md-icon-button" ng-click="someFunc()">
-                            <i class="material-icons">edit</i>
-                        </md-button>
+                <div ng-repeat="detail in watchlistDetail" >
+                    <div flex="50" class="md-margin layout-column md-padding palette-Blue-Grey-100 bg">
+                        <div layout="row"  layout-wrap>
+                            <div flex class="md-headline">{{detail.quote.ticker}}</div>
+                            <div flex class="md-caption">{{detail.quote.name}}</div>
+                            <div  class="md-title" flex>{{detail.quote.currentPrice}}</div>
+                            <div flex class="md-title" ng-class="detail.quote.currentPrice > 0 ? 'palette-Green-700 text' : 'palette-Red-700 text'">{{detail.quote.change}}</div>
+                            <div flex><span class="md-caption">Qty:</span>{{detail.qty}}</div>
+                            <div flex><span class="md-caption">Gain/Loss:</span>{{detail.gain}}</div>
+                        </div>
+                        <div class="layout-row md-margin">
+                            <div flex><span class="md-caption">low:</span>{{detail.quote.daysLow}}</div>
+                            <div flex><span class="md-caption">high:</span>{{detail.quote.daysHigh}}</div>
+                            <div flex><span class="md-caption">mCap:</span>{{detail.quote.marketCapitalization}}</div>
+                            <div flex><span class="md-caption">DY:</span>{{detail.quote.dividendYield}}</div>
+                        </div>
+                        <div class="layout-row">
+                            <md-button flex="5" class="md-icon-button"  style=" font-size: 18px;" ng-click="deleteStockItem(detail.quote.ticker)">
+                                <i class="material-icons md-48">delete</i>
+                            </md-button>
+                            <md-button flex="5" class="md-icon-button" ng-click="editStockItem()">
+                                <i class="material-icons md-48">edit</i>
+                            </md-button>
+                        </div>
                     </div>
+
                 </div>
             </md-list>
         </div>
@@ -47,10 +56,10 @@
     </md-button>
     <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" md-component-id="right" class="md-sidenav-right md-whiteframe-z1 palette-Light-Blue-800 bg">
         <md-content class="layout-column" class="md-padding md-margin">
-            <div layout="row" layout-align="center center" class="md-padding  palette-Light-Blue-800 bg" >
+            <div layout="row" layout-align="center center" class="palette-Light-Blue-800 bg">
                 <i class="material-icons" layout-align="center center">alarm</i>
             </div>
-            <md-list  class="palette-Amber-800 text">
+            <md-list class="palette-Amber-800 text">
                 <md-list-item class="md-3-line" ng-repeat="m in messages">
                     <div class="md-list-item-text">{{m.message}}</div>
                     <md-divider></md-divider>
