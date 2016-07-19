@@ -40,6 +40,19 @@
                         controllerAs: 'vm'
                     }
                 }
+            }).state('watchlist-all', {
+                parent: 'app',
+                url: '/watchlist-all',
+                data: {
+                    authorities: []
+                },
+                views: {
+                    'content@': {
+                        templateUrl: 'app/home/watchlist-all.html',
+                        controller: 'HomeController',
+                        controllerAs: 'vm'
+                    }
+                }
             });
     }
 })();

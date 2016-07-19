@@ -17,6 +17,8 @@ public class Watchlist extends AbstractAuditingEntity implements Serializable {
 
 	private String user;
 
+	private boolean isIRA;
+
 	private List<String> stocks = new ArrayList<>();;
 
 	public String getId() {
@@ -49,6 +51,14 @@ public class Watchlist extends AbstractAuditingEntity implements Serializable {
 
 	public void setStocks(List<String> stocks) {
 		this.stocks = stocks;
+	}
+
+	public boolean isIRA() {
+		return isIRA;
+	}
+
+	public void setIRA(boolean isIRA) {
+		this.isIRA = isIRA;
 	}
 
 }

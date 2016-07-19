@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.joda.time.DateTime;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -19,15 +20,17 @@ public class WatchlistItem extends AbstractAuditingEntity implements Serializabl
 
 	private String timeAdded;
 
-	private String valueWhenAdded;
+	private double valueWhenAdded;
 
-	private String qty;
+	private double qty;
 
-	private float shortTermGainLoss;
+	private double shortTermGainLoss;
 
-	private float longTemGainLoss;
+	private double longTemGainLoss;
 
 	private String lastUpdatedDDTM;
+
+	private double marketValue;
 
 	private Set<WatchlistQtyLineItem> qtyLineItems = new HashSet<>();
 
@@ -35,11 +38,19 @@ public class WatchlistItem extends AbstractAuditingEntity implements Serializabl
 		return qtyLineItems;
 	}
 
-	public void addQtyItem(String watchlist, float qty, String date, float priceAtPurchase) {
+	public void addQtyItem(String watchlist, double qty, String date, double priceAtPurchase) {
 		if (qty > 0) {
 			WatchlistQtyLineItem w = new WatchlistQtyLineItem(qty, date, priceAtPurchase, watchlist);
 			qtyLineItems.add(w);
 		}
+	}
+
+	public void setMarketValue(double marketValue) {
+		this.marketValue = marketValue;
+	}
+
+	public double getMarketValue() {
+		return marketValue;
 	}
 
 	public String getTimeAdded() {
@@ -50,35 +61,35 @@ public class WatchlistItem extends AbstractAuditingEntity implements Serializabl
 		this.timeAdded = timeAdded;
 	}
 
-	public String getValueWhenAdded() {
+	public double getValueWhenAdded() {
 		return valueWhenAdded;
 	}
 
-	public void setValueWhenAdded(String valueWhenAdded) {
+	public void setValueWhenAdded(double valueWhenAdded) {
 		this.valueWhenAdded = valueWhenAdded;
 	}
 
-	public String getQty() {
+	public double getQty() {
 		return qty;
 	}
 
-	public void setQty(String qty) {
+	public void setQty(double qty) {
 		this.qty = qty;
 	}
 
-	public float getShortTermGainLoss() {
+	public double getShortTermGainLoss() {
 		return shortTermGainLoss;
 	}
 
-	public void setShortTermGainLoss(float shortTermGainLoss) {
+	public void setShortTermGainLoss(double shortTermGainLoss) {
 		this.shortTermGainLoss = shortTermGainLoss;
 	}
 
-	public float getLongTemGainLoss() {
+	public double getLongTemGainLoss() {
 		return longTemGainLoss;
 	}
 
-	public void setLongTemGainLoss(float longTemGainLoss) {
+	public void setLongTemGainLoss(double longTemGainLoss) {
 		this.longTemGainLoss = longTemGainLoss;
 	}
 
@@ -90,7 +101,7 @@ public class WatchlistItem extends AbstractAuditingEntity implements Serializabl
 		this.lastUpdatedDDTM = lastUpdatedDDTM;
 	}
 
-	public float getOverallGainLoss() {
+	public double getOverallGainLoss() {
 		return longTemGainLoss + shortTermGainLoss;
 
 	}
@@ -117,26 +128,31 @@ public class WatchlistItem extends AbstractAuditingEntity implements Serializabl
 
 	public static class WatchlistQtyLineItem {
 
-		private float qty;
+		private double qty;
 
 		private String dateBought;
 
-		private float priceAtPurchase;
+		private double priceAtPurchase;
 
 		private String watchlist;
 
-		public WatchlistQtyLineItem(float qty, String dateBought, float priceAtPurchase, String watchlist) {
+		public WatchlistQtyLineItem(double qty, String dateBought, double priceAtPurchase, String watchlist) {
 			this.qty = qty;
 			this.dateBought = dateBought;
 			this.priceAtPurchase = priceAtPurchase;
 			this.watchlist = watchlist;
 		}
 
-		public float getQty() {
+		public double getQty() {
 			return qty;
 		}
 
-		public void setQty(float qty) {
+		public boolean isLongTerm() {
+			DateTime dt = DateTime.parse(getDateBought());
+			return DateTime.now().minusYears(1).isAfter(dt);
+		}
+
+		public void setQty(double qty) {
 			this.qty = qty;
 		}
 
@@ -148,11 +164,11 @@ public class WatchlistItem extends AbstractAuditingEntity implements Serializabl
 			this.dateBought = dateBought;
 		}
 
-		public float getPriceAtPurchase() {
+		public double getPriceAtPurchase() {
 			return priceAtPurchase;
 		}
 
-		public void setPriceAtPurchase(float priceAtPurchase) {
+		public void setPriceAtPurchase(double priceAtPurchase) {
 			this.priceAtPurchase = priceAtPurchase;
 		}
 

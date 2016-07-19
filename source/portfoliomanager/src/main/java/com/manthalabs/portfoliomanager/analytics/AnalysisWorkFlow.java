@@ -1,7 +1,6 @@
 package com.manthalabs.portfoliomanager.analytics;
 
 import java.util.List;
-import java.util.ServiceLoader;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -23,35 +22,29 @@ public class AnalysisWorkFlow {
 	@Autowired
 	private WatchlistItemAnalysisRepository watchlistItemAnalysisRepository;
 
-	public void runAnalysis() {
+	@Autowired
+	List<WatchlistItemAnalysisRule> watchlistItemAnalysisRules;
 
-		List<Watchlist> ws = watchlistRepository.findAll();
-
-		for (Watchlist w : ws) {
-
-			WatchlistStockItemAnalysis analysisResults = new WatchlistStockItemAnalysis();
-
-			ServiceLoader<WatchlistAnalysisRule> rules = ServiceLoader.load(WatchlistAnalysisRule.class);
-
-			for (WatchlistAnalysisRule wa : rules) {
-				wa.run(analysisResults, w);
-			}
-
-		}
+	public void runAnalysis(Watchlist w) {
 
 		// process each stock
 		List<WatchlistItem> watchlistItems = watchlistItemRepository.findAll();
 
 		for (WatchlistItem wi : watchlistItems) {
-			ServiceLoader<WatchlistItemAnalysisRule> watchlistItemRules = ServiceLoader
-					.load(WatchlistItemAnalysisRule.class);
+
+			// Clear all the analysis
+			try {
+				watchlistItemAnalysisRepository.delete(wi.getStock());
+			} catch (Exception e) {
+
+			}
+
+			// Re run all the rules
 			WatchlistStockItemAnalysis analysisResults = new WatchlistStockItemAnalysis();
 			analysisResults.setSymbol(wi.getStock());
 
-			watchlistItemRepository.delete(wi.getStock());
-
-			for (WatchlistItemAnalysisRule wia : watchlistItemRules) {
-				wia.run(analysisResults, wi);
+			for (WatchlistItemAnalysisRule wia : watchlistItemAnalysisRules) {
+				wia.run(analysisResults, w, wi);
 			}
 
 			watchlistItemAnalysisRepository.save(analysisResults);

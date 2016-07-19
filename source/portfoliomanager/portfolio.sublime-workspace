@@ -4,6 +4,90 @@
 		"selected_items":
 		[
 			[
+				"md-ch",
+				"md-checkbox	Angular Material - Checkbox directive with options"
+			],
+			[
+				"md-mni",
+				"md-mini	 angular-material.css"
+			],
+			[
+				"md-bu",
+				"md-button	 angular-material.css"
+			],
+			[
+				"md-sub",
+				"md-subhead	 angular-material.css"
+			],
+			[
+				"t",
+				"th	Tag"
+			],
+			[
+				"getWatch",
+				"getAllWatchlistDetails"
+			],
+			[
+				"for",
+				"for	for (…) {…}"
+			],
+			[
+				"f",
+				"for	for (…) {…} (Improved Native For-Loop)"
+			],
+			[
+				"lay",
+				"layout-row	 angular-material.css"
+			],
+			[
+				"pa",
+				"palette-Red-A200	 palette.css"
+			],
+			[
+				"palette-Li",
+				"palette-Light-Blue	 palette.css"
+			],
+			[
+				"palette-Blue",
+				"palette-Blue-Grey	 palette.css"
+			],
+			[
+				"su",
+				"success	Event"
+			],
+			[
+				"$sc",
+				"$scope	AngularJS"
+			],
+			[
+				"dele",
+				"delete(Object)	Object"
+			],
+			[
+				"di",
+				"div	Tag"
+			],
+			[
+				"md-",
+				"md-divider	Angular Material - md-divider"
+			],
+			[
+				"md-lis",
+				"md-list-item	Angular Material - The md-list-item directive is a container intended for row items in a md-list container."
+			],
+			[
+				"md-c",
+				"md-content	Angular Material - md-content"
+			],
+			[
+				"md-side",
+				"md-sidenav	Angular Material - A Sidenav component that can be opened and closed programatically."
+			],
+			[
+				"MD",
+				"md-sidenav"
+			],
+			[
 				"la",
 				"layout-column	 angular-material.css"
 			],
@@ -22,14 +106,6 @@
 			[
 				"l",
 				"layout-padding	 angular-material.css"
-			],
-			[
-				"lay",
-				"layout-column	 angular-material.css"
-			],
-			[
-				"getWatch",
-				"getWatchList"
 			],
 			[
 				"funct",
@@ -56,11 +132,177 @@
 	"buffers":
 	[
 		{
-			"file": "package.json",
+			"file": "node_modules/abab/index.js",
 			"settings":
 			{
-				"buffer_size": 1841,
+				"buffer_size": 133,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/main/webapp/app/home/watchlist.html",
+			"settings":
+			{
+				"buffer_size": 4140,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "bower.json",
+			"settings":
+			{
+				"buffer_size": 1347,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/main/webapp/app/home/home.controller.js",
+			"settings":
+			{
+				"buffer_size": 8319,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/main/webapp/app/app.module.js",
+			"settings":
+			{
+				"buffer_size": 709,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/main/webapp/app/components/watchlist/watchlistmini.directive.js",
+			"settings":
+			{
+				"buffer_size": 477,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/main/webapp/app/home/watchlist-mini.html",
+			"settings":
+			{
+				"buffer_size": 1277,
+				"line_ending": "Unix",
+				"name": "watchlist-mini.html"
+			}
+		},
+		{
+			"file": "src/main/webapp/app/home/watchlist-all.html",
+			"settings":
+			{
+				"buffer_size": 305,
+				"line_ending": "Unix",
+				"name": "watchlist-all.html"
+			}
+		},
+		{
+			"file": "src/main/webapp/bower_components/google-material-color/dist/palette.css",
+			"settings":
+			{
+				"buffer_size": 30234,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/main/webapp/content/css/main.css",
+			"settings":
+			{
+				"buffer_size": 8885,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/main/webapp/content/css/app.css",
+			"settings":
+			{
+				"buffer_size": 72,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/main/webapp/app/home/home.state.js",
+			"settings":
+			{
+				"buffer_size": 1797,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/main/webapp/content/css/vendor.css",
+			"settings":
+			{
+				"buffer_size": 151387,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "node_modules/weinre/web/doc/Home.html",
+			"settings":
+			{
+				"buffer_size": 10807,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/main/webapp/app/layouts/navbar/navbar.html",
+			"settings":
+			{
+				"buffer_size": 8216,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "gulpfile.js",
+			"settings":
+			{
+				"buffer_size": 8410,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "node_modules/ast-query/Gruntfile.js",
+			"settings":
+			{
+				"buffer_size": 501,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "{ \"watchlistName\": \"Emerging\", \"totalGainLoss\": 0.0, \"totalAccountValue\": 0.0, \"watchLists\": [{ \"id\": null, \"quote\": { \"name\": \"Ishares MSCI India ETF\", \"ticker\": \"INDA\", \"currentPrice\": \"28.11\", \"change\": \"+0.52\", \"daysLow\": \"27.74\", \"daysHigh\": \"28.09\", \"yearLow\": null, \"yearHigh\": null, \"marketCapitalization\": null, \"dividendYield\": null, \"peRatio\": null, \"currentPriceFloat\": 28.11 }, \"qty\": 0.0, \"gain\": 0.0, \"totalValue\": 0.0, \"accountPercentage\": 0.0 }, { \"id\": null, \"quote\": { \"name\": \"iShares MSCI Brazil Capped Inde\", \"ticker\": \"EWZ\", \"currentPrice\": \"29.25\", \"change\": \"+1.10\", \"daysLow\": \"28.18\", \"daysHigh\": \"29.10\", \"yearLow\": null, \"yearHigh\": null, \"marketCapitalization\": null, \"dividendYield\": \"5.10\", \"peRatio\": null, \"currentPriceFloat\": 29.25 }, \"qty\": 0.0, \"gain\": 0.0, \"totalValue\": 0.0, \"accountPercentage\": 0.0 }] }\n",
+			"settings":
+			{
+				"buffer_size": 844,
+				"line_ending": "Unix",
+				"name": "{ \"watchlistName\": \"Emerging\", \"totalGainLoss\": 0."
+			}
+		},
+		{
+			"contents": "package com.servicemesh.agility.adapters.service.ipam.operations;\n\nimport java.net.InetAddress;\nimport java.util.ArrayList;\nimport java.util.HashMap;\nimport java.util.List;\nimport java.util.Map;\nimport java.util.Optional;\n\nimport org.apache.log4j.Logger;\n\nimport com.servicemesh.agility.adapters.service.ipam.IPAM;\nimport com.servicemesh.agility.adapters.service.ipam.client.AddressMapper;\nimport com.servicemesh.agility.adapters.service.ipam.client.AddressProvider;\nimport com.servicemesh.agility.adapters.service.ipam.client.DNSMapper;\nimport com.servicemesh.agility.api.Address;\nimport com.servicemesh.agility.api.ApiResponse;\nimport com.servicemesh.agility.api.CloudPropertyRequest;\nimport com.servicemesh.agility.api.CloudPropertyResponse;\nimport com.servicemesh.agility.api.CreateRequest;\nimport com.servicemesh.agility.api.Instance;\nimport com.servicemesh.agility.api.Link;\nimport com.servicemesh.agility.api.Network;\nimport com.servicemesh.agility.api.NetworkInterface;\nimport com.servicemesh.agility.api.Resource;\nimport com.servicemesh.agility.api.ServiceInstance;\nimport com.servicemesh.agility.api.ServiceProvider;\nimport com.servicemesh.agility.api.ServiceProviderType;\nimport com.servicemesh.agility.api.Template;\nimport com.servicemesh.agility.api.UpdateRequest;\nimport com.servicemesh.agility.sdk.service.helper.LinkHelper;\nimport com.servicemesh.agility.sdk.service.msgs.InstancePostBootRequest;\nimport com.servicemesh.agility.sdk.service.msgs.InstancePostProvisionRequest;\nimport com.servicemesh.agility.sdk.service.msgs.InstancePostReleaseRequest;\nimport com.servicemesh.agility.sdk.service.msgs.InstancePostStopRequest;\nimport com.servicemesh.agility.sdk.service.msgs.InstancePreBootRequest;\nimport com.servicemesh.agility.sdk.service.msgs.InstanceResponse;\nimport com.servicemesh.agility.sdk.service.spi.ServiceRegistry;\nimport com.servicemesh.core.async.AsyncService;\nimport com.servicemesh.core.async.Function;\nimport com.servicemesh.core.async.Promise;\nimport com.servicemesh.core.messaging.Status;\n\n/**\n * Uses Instance lifecycle hooks to trigger IPAM actions\n */\npublic class InstanceOperations extends com.servicemesh.agility.sdk.service.operations.InstanceOperations\n{\n    private final static Logger logger = Logger.getLogger(InstanceOperations.class);\n    private ServiceRegistry svcRegistry;\n\n    public InstanceOperations(ServiceRegistry sr)\n    {\n        svcRegistry = sr;\n    }\n\n    /**\n     * {@inheritDoc} In IPAM, this is when reserve, allocate, and assign address occur.\n     */\n    @Override\n    public Promise<InstanceResponse> preBoot(InstancePreBootRequest request)\n    {\n        // check to see if this instance is configured to use ipam\n        ServiceProviderType addressProviderType = null;\n        ServiceProviderType addressMapperType = null;\n        for (ServiceProviderType serviceProviderType : request.getServiceProviderTypes())\n        {\n            List<Link> superTypes = new ArrayList<Link>(serviceProviderType.getSuperTypes());\n            superTypes.addAll(serviceProviderType.getServiceTypeSuperTypes());\n            for (Link assetType : superTypes)\n            {\n                if (assetType.getName().equals(IPAM.ADDRESS_PROVIDER_NAME))\n                {\n                    addressProviderType = serviceProviderType;\n                }\n                if (assetType.getName().equals(IPAM.ADDRESS_MAPPER_NAME))\n                {\n                    addressMapperType = serviceProviderType;\n                }\n            }\n        }\n\n        // there is not an address provider do nothing\n        if (addressProviderType == null)\n        {\n            InstanceResponse response = new InstanceResponse();\n            response.setStatus(Status.COMPLETE);\n            return Promise.pure(response);\n        }\n\n        // if there is no address mapper, then fail\n        if (addressMapperType == null)\n        {\n            InstanceResponse response = new InstanceResponse();\n            String instanceName = request.getInstance().getName();\n            return Promise.pure(new Exception(\"Cannot provision instance \" + instanceName\n                    + \" because there is no IPAM Address Mapper network service configured\"));\n        }\n\n        // lookup the corresponding service provider and binding\n        ServiceProvider addressProvider = null;\n        ServiceProvider mapperProvider = null;\n        for (ServiceProvider serviceProvider : request.getServiceProviders())\n        {\n            if (serviceProvider.getType().getId() == addressProviderType.getId())\n            {\n                addressProvider = serviceProvider;\n            }\n            if (serviceProvider.getType().getId() == addressMapperType.getId())\n            {\n                mapperProvider = serviceProvider;\n            }\n        }\n        if (addressProvider == null)\n        {\n            return Promise.pure(new Exception(\"Network service not configured\"));\n        }\n\n        ServiceInstance addressBinding = null;\n        ServiceInstance mapperBinding = null;\n        for (ServiceInstance serviceInstance : request.getPeerServiceInstances())\n        {\n            if (serviceInstance.getProvider().getId() == addressProvider.getId())\n            {\n                addressBinding = serviceInstance;\n            }\n            if (serviceInstance.getProvider().getId() == mapperProvider.getId())\n            {\n                mapperBinding = serviceInstance;\n            }\n        }\n        if (addressBinding == null)\n        {\n            return Promise.pure(new Exception(\"Network service not configured\"));\n        }\n\n        AsyncService addressService = svcRegistry.lookupServiceByProvider(addressProvider);\n        if (addressService == null)\n        {\n            return Promise.pure(new Exception(\"Unable to resolve service provider: \" + addressProvider.getName()));\n        }\n\n        final Instance instance = request.getInstance();\n        final Map<Integer, Network> networks = new HashMap<Integer, Network>();\n        for (Network network : request.getNetworks())\n        {\n            networks.put(network.getId(), network);\n        }\n\n        // iterate through the network interfaces on the instance and attempt to reserve or allocate an address for each\n        final AddressProvider ipamProvider = new AddressProvider(addressBinding, addressProvider, addressService);\n        List<Promise<NetworkInterface>> promises = new ArrayList<Promise<NetworkInterface>>();\n        for (Resource resource : instance.getResources())\n        {\n            if (resource instanceof NetworkInterface)\n            {\n                NetworkInterface nic = (NetworkInterface) resource;\n                Link networkLink = nic.getNetwork();\n                if (networkLink == null)\n                {\n                    continue;\n                }\n\n                Network network = networks.get(networkLink.getId());\n                if (network == null)\n                {\n                    continue;\n                }\n\n                Address address = nic.getAddress();\n\n                // attempt to reserve address\n                if (address != null)\n                {\n                    Promise<NetworkInterface> promise = ipamProvider.reserveAddress(instance, nic, network, address);\n                    promises.add(promise);\n                }\n                else if (network != null)\n                {\n                    Promise<NetworkInterface> promise = ipamProvider.allocateAddress(instance, nic, network);\n                    promises.add(promise);\n                }\n            }\n        }\n\n        AsyncService mapperService = null;\n        if (mapperProvider != null)\n        {\n            mapperService = svcRegistry.lookupServiceByProvider(mapperProvider);\n        }\n        if (mapperService == null)\n        {\n            return Promise.pure(new Exception(\"Unable to resolve service mapper: \" + mapperProvider.getName()));\n        }\n\n        final AddressMapper ipamMapper = new AddressMapper(mapperBinding, mapperProvider, mapperService);\n\n        if (promises.size() > 0)\n        {\n            Promise<List<NetworkInterface>> promise = Promise.sequence(promises);\n            return promise.flatMap(new Function<List<NetworkInterface>, Promise<InstanceResponse>>() {\n\n                @Override\n                public Promise<InstanceResponse> invoke(List<NetworkInterface> nics)\n                {\n                    // Assign the address if an address mapper is configured\n                    String poolServiceProviderTypeName = ipamProvider.get_provider().getType().getName();\n                    // if the pool is IPAM Agility Pool then we must call assignAddress otherwise as in the case\n                    // for bluecat it may not be necessary.\n                    if (ipamMapper.hasBinding() && \"IPAM Agility Pool\".equals(poolServiceProviderTypeName))\n                    {\n                        return assignAddress(ipamMapper, instance, nics, networks);\n                    }\n                    return buildResponse(instance, nics);\n                }\n\n            });\n        }\n        else\n        {\n            InstanceResponse response = new InstanceResponse();\n            response.setStatus(Status.COMPLETE);\n            return Promise.pure(response);\n        }\n    }\n\n    private Promise<InstanceResponse> assignAddress(AddressMapper ipamMapper, final Instance instance,\n            List<NetworkInterface> nics, Map<Integer, Network> networks)\n    {\n        List<Promise<NetworkInterface>> promises = new ArrayList<Promise<NetworkInterface>>();\n        for (NetworkInterface nic : nics)\n        {\n            if (nic.getNetwork() != null && nic.getAddress() != null)\n            {\n                Network network = networks.get(nic.getNetwork().getId());\n                Promise<NetworkInterface> promise = ipamMapper.assignAddress(instance, nic, network, nic.getAddress());\n                promises.add(promise);\n            }\n        }\n        Promise<List<NetworkInterface>> promise = Promise.sequence(promises);\n        return promise.flatMap(new Function<List<NetworkInterface>, Promise<InstanceResponse>>() {\n\n            @Override\n            public Promise<InstanceResponse> invoke(List<NetworkInterface> nics)\n            {\n                return buildResponse(instance, nics);\n            }\n\n        });\n    }\n\n    /**\n     * {@inheritDoc} In IPAM, this is when remove and release address occur.\n     */\n    @Override\n    public Promise<InstanceResponse> postRelease(InstancePostReleaseRequest request)\n    {\n        logger.debug(\"Executing postRelease...\");\n        // check to see if this instance is configured to use ipam\n        ServiceProviderType addressProviderType = null;\n        ServiceProviderType addressMapperType = null;\n        ServiceProviderType dnsMapperType = null;\n        for (ServiceProviderType serviceProviderType : request.getServiceProviderTypes())\n        {\n            List<Link> superTypes = new ArrayList<Link>(serviceProviderType.getSuperTypes());\n            superTypes.addAll(serviceProviderType.getServiceTypeSuperTypes());\n            for (Link assetType : superTypes)\n            {\n                switch (assetType.getName())\n                {\n                    case IPAM.ADDRESS_PROVIDER_NAME:\n                        addressProviderType = serviceProviderType;\n                        break;\n                    case IPAM.ADDRESS_MAPPER_NAME:\n                        addressMapperType = serviceProviderType;\n                        break;\n                    case IPAM.DNS_MAPPER_NAME:\n                        dnsMapperType = serviceProviderType;\n                        break;\n                    default:\n                        break;\n                }\n            }\n        }\n\n        // there is not an address provider do nothing\n        if (addressProviderType == null)\n        {\n            logger.warn(\"Did not find an addressProvider. Execution stopped.\");\n            InstanceResponse response = new InstanceResponse();\n            response.setStatus(Status.COMPLETE);\n            return Promise.pure(response);\n        }\n\n        // there is not an address mapper do nothing\n        if (addressMapperType == null)\n        {\n            logger.warn(\"Did not find an addressMapper. Execution stopped.\");\n            InstanceResponse response = new InstanceResponse();\n            response.setStatus(Status.COMPLETE);\n            return Promise.pure(response);\n        }\n\n        // lookup the corresponding service provider and binding\n        ServiceProvider addressProvider = null;\n        ServiceProvider mapperProvider = null;\n        ServiceProvider dnsProvider = null;\n        for (ServiceProvider serviceProvider : request.getServiceProviders())\n        {\n            if (serviceProvider.getType().getId() == addressProviderType.getId())\n            {\n                addressProvider = serviceProvider;\n            }\n            if (serviceProvider.getType().getId() == addressMapperType.getId())\n            {\n                mapperProvider = serviceProvider;\n            }\n            if (serviceProvider.getType().getId() == dnsMapperType.getId())\n            {\n                dnsProvider = serviceProvider;\n            }\n        }\n        if (addressProvider == null)\n        {\n            return Promise.pure(new Exception(\"Network service not configured\"));\n        }\n\n        ServiceInstance addressBinding = null;\n        ServiceInstance mapperBinding = null;\n        ServiceInstance dnsMapperBinding = null;\n        for (ServiceInstance serviceInstance : request.getPeerServiceInstances())\n        {\n            if (serviceInstance.getProvider().getId() == addressProvider.getId())\n            {\n                addressBinding = serviceInstance;\n            }\n            if (serviceInstance.getProvider().getId() == mapperProvider.getId())\n            {\n                mapperBinding = serviceInstance;\n            }\n            if (serviceInstance.getProvider().getId() == dnsProvider.getId())\n            {\n                dnsMapperBinding = serviceInstance;\n            }\n\n        }\n        if (addressBinding == null)\n        {\n            return Promise.pure(new Exception(\"Network service not configured\"));\n        }\n\n        AsyncService providerService = svcRegistry.lookupServiceByProvider(addressProvider);\n        if (providerService == null)\n        {\n            return Promise.pure(new Exception(\"Unable to resolve service provider: \" + addressProvider.getName()));\n        }\n\n        AsyncService mapperService = null;\n        if (mapperProvider != null)\n        {\n            mapperService = svcRegistry.lookupServiceByProvider(mapperProvider);\n        }\n        if (mapperService == null)\n        {\n            return Promise.pure(new Exception(\"Unable to resolve service mapper: \" + mapperProvider.getName()));\n        }\n\n        AsyncService dnsMapperService = svcRegistry.lookupServiceByProvider(dnsProvider);\n\n        if (dnsMapperService == null)\n        {\n            return Promise.pure(new Exception(\"Unable to resolve service mapper: \" + dnsProvider.getName()));\n        }\n\n        final Instance instance = request.getInstance();\n        final Map<Integer, Network> networks = new HashMap<Integer, Network>();\n        for (Network network : request.getNetworks())\n        {\n            networks.put(network.getId(), network);\n        }\n\n        // iterate through the network interfaces on the instance and attempt to remove and release an address for each\n        final AddressProvider ipamProvider = new AddressProvider(addressBinding, addressProvider, providerService);\n        final AddressMapper ipamMapper = new AddressMapper(mapperBinding, mapperProvider, mapperService);\n        final DNSMapper dnsMapper = new DNSMapper(dnsMapperBinding, dnsProvider, dnsMapperService);\n        List<Promise<NetworkInterface>> releaseAddressPromises = new ArrayList<Promise<NetworkInterface>>();\n        List<Promise<Address>> dnsRemovePromises = new ArrayList<Promise<Address>>();\n\n        for (Resource resource : instance.getResources())\n        {\n            if (resource instanceof NetworkInterface)\n            {\n                NetworkInterface nic = (NetworkInterface) resource;\n                Link networkLink = nic.getNetwork();\n                if (networkLink == null)\n                {\n                    continue;\n                }\n\n                Network network = networks.get(networkLink.getId());\n                if (network == null)\n                {\n                    continue;\n                }\n\n                Address address = nic.getAddress();\n                if (address == null)\n                {\n                    continue;\n                }\n\n                // attempt to remove address mapping\n                String poolServiceProviderTypeName = ipamProvider.get_provider().getType().getName();\n                // if the pool is IPAM Agility Pool then we must call removeAddress otherwise as in the case\n                // for bluecat it may not be necessary.\n                if (ipamMapper.hasBinding() && \"IPAM Agility Pool\".equals(poolServiceProviderTypeName))\n                {\n                    Promise<NetworkInterface> removeAddressPromise = ipamMapper.removeAddress(instance, nic, network, address);\n                    releaseAddressPromises.add(removeAddressPromise);\n                }\n\n                //Get template's networkinterface's ip address to pass to release address\n                //This may need to be changed to support multiple nics\n                Address templateAddress = null;\n                List<Resource> resources = request.getTemplate().getResources();\n                for (Resource res : resources)\n                {\n                    if (res instanceof NetworkInterface)\n                    {\n                        templateAddress = ((NetworkInterface) res).getAddress();\n                    }\n                }\n\n                // release address back to the pool\n                Promise<NetworkInterface> releseAddressPromise =\n                        ipamProvider.releaseAddress(instance, nic, network, address, templateAddress);\n\n                Promise<Address> removeDNSEntryPromise = dnsMapper.delAddress(instance, network, address);\n\n                releaseAddressPromises.add(releseAddressPromise);\n                dnsRemovePromises.add(removeDNSEntryPromise);\n            }\n        }\n\n        if (releaseAddressPromises.size() > 0)\n        {\n            final Promise<List<NetworkInterface>> networkInterfacePromises = Promise.sequence(releaseAddressPromises);\n            final Promise<List<Address>> addressPromises = Promise.sequence(dnsRemovePromises);\n\n            return addressPromises.flatMap(new Function<List<Address>, Promise<List<NetworkInterface>>>() {\n\n                @Override\n                public Promise<List<NetworkInterface>> invoke(List<Address> nics)\n                {\n                    //We dont do anything with the address returned\n                    return networkInterfacePromises;\n                }\n\n            }).flatMap(new Function<List<NetworkInterface>, Promise<InstanceResponse>>() {\n\n                @Override\n                public Promise<InstanceResponse> invoke(List<NetworkInterface> nics)\n                {\n                    return buildResponse(instance, nics);\n                }\n            });\n        }\n        else\n        {\n            InstanceResponse response = new InstanceResponse();\n            response.setStatus(Status.COMPLETE);\n            return Promise.pure(response);\n        }\n    }\n\n    private Promise<InstanceResponse> buildResponse(Instance instance, List<NetworkInterface> nics)\n    {\n        // update instance with updated nic(s)\n        InstanceResponse response = new InstanceResponse();\n        List<Resource> resources = new ArrayList<Resource>();\n        for (Resource resource : instance.getResources())\n        {\n            if (!(resource instanceof NetworkInterface))\n            {\n                resources.add(resource);\n            }\n        }\n        if (nics != null)\n        {\n            for (NetworkInterface nic : nics)\n            {\n                if (nic != null)\n                {\n                    resources.add(nic);\n                }\n            }\n        }\n        instance.getResources().clear(); //remove all previous resources\n        instance.getResources().addAll(resources); //add the new updated resources\n        response.setInstance(instance);\n        response.setStatus(Status.COMPLETE);\n        return Promise.pure(response);\n    }\n\n    /**\n     * {@inheritDoc} In IPAM, this updates the address to reflect the currently assigned hostname.\n     */\n    @Override\n    public Promise<InstanceResponse> postProvision(InstancePostProvisionRequest request)\n    {\n        logger.debug(\"Executing postProvision...\");\n        final Instance instance = request.getInstance();\n        List<Promise<ApiResponse>> promises = new ArrayList<Promise<ApiResponse>>();\n        for (Resource resource : instance.getResources())\n        {\n            if (resource instanceof NetworkInterface)\n            {\n                NetworkInterface nic = (NetworkInterface) resource;\n                Address address = nic.getAddress();\n                if (address == null)\n                {\n                    continue;\n                }\n\n                try\n                {\n                    // update the address to reflect the currently assigned hostname\n                    InetAddress addrInet = InetAddress.getByName(address.getAddress());\n                    address.setName(addrInet.getCanonicalHostName());\n                    UpdateRequest req = new UpdateRequest();\n                    req.setAsset(address);\n                    AsyncService api = svcRegistry.lookupApiService();\n                    Promise<ApiResponse> promise = api.promise(req);\n                    promises.add(promise);\n                }\n                catch (Exception ex)\n                {\n                    logger.error(ex.getMessage(), ex);\n                    continue;\n                }\n            }\n        }\n\n        if (promises.size() > 0)\n        {\n            Promise<List<ApiResponse>> promise = Promise.sequence(promises);\n            return promise.flatMap(new Function<List<ApiResponse>, Promise<InstanceResponse>>() {\n\n                @Override\n                public Promise<InstanceResponse> invoke(List<ApiResponse> responses)\n                {\n                    InstanceResponse response = new InstanceResponse();\n                    response.setStatus(Status.COMPLETE);\n                    return Promise.pure(response);\n                }\n            });\n        }\n        else\n        {\n            InstanceResponse response = new InstanceResponse();\n            response.setStatus(Status.COMPLETE);\n            return Promise.pure(response);\n        }\n\n    }\n\n    /**\n     * {@inheritDoc} In IPAM, this is when the network interface of the instance is updated with the assigned IP.\n     */\n    @Override\n    public Promise<InstanceResponse> postBoot(InstancePostBootRequest request)\n    {\n        logger.debug(\"Executing postBoot...\");\n        final Instance instance = request.getInstance();\n        final Map<Integer, Network> networks = new HashMap<Integer, Network>();\n        for (Network network : request.getNetworks())\n        {\n            networks.put(network.getId(), network);\n        }\n\n        final List<NetworkInterface> modifiedNics = new ArrayList<NetworkInterface>();\n        List<Promise<ApiResponse>> promises = new ArrayList<Promise<ApiResponse>>();\n        List<Promise<Address>> addDNSPromises = new ArrayList<Promise<Address>>();\n        Link ilink = LinkHelper.getLink(instance);\n\n        final DNSMapper dnsMapper =\n                getDNSMapper(request.getServiceProviderTypes(), request.getServiceProviders(), request.getPeerServiceInstances());\n\n        for (Resource resource : instance.getResources())\n        {\n            if (resource instanceof NetworkInterface)\n            {\n                final NetworkInterface nic = (NetworkInterface) resource;\n                Link networkLink = nic.getNetwork();\n                if (networkLink == null)\n                {\n                    continue;\n                }\n\n                Address nicAdd = nic.getAddress();\n                if (nicAdd != null)\n                {\n                    continue;\n                }\n\n                Network network = networks.get(networkLink.getId());\n                if (network == null)\n                {\n                    continue;\n                }\n\n                try\n                {\n                    if (!isAddressAndMaskSet(network))\n                    {\n                        // best guess\n                        String instanceAdd = instance.getPublicAddress();\n                        if (instanceAdd == null)\n                        {\n                            instanceAdd = instance.getPrivateAddress();\n                        }\n                        if (instanceAdd == null)\n                        {\n                            continue;\n                        }\n\n                        InetAddress addrInet = InetAddress.getByName(instanceAdd);\n                        Address address = new Address();\n                        address.setName(addrInet.getCanonicalHostName());\n                        address.setAddress(addrInet.getHostAddress());\n                        address.setInstance(ilink);\n                        nic.setAddress(address);\n                        modifiedNics.add(nic);\n                        addCreateRequest(promises, address);\n                        break;\n                    }\n\n                    // otherwise pick the address that matches the network configuration\n                    String networkAddress = network.getNetworkAddress();\n                    String networkMask = network.getNetworkMask();\n                    String publicAddress = instance.getPublicAddress();\n                    if (publicAddress != null && networkCovers(publicAddress, networkAddress, networkMask))\n                    {\n                        InetAddress publicInet = InetAddress.getByName(publicAddress);\n                        Address address = new Address();\n                        address.setName(publicInet.getCanonicalHostName());\n                        address.setAddress(publicInet.getHostAddress());\n                        address.setInstance(ilink);\n                        nic.setAddress(address);\n                        modifiedNics.add(nic);\n                        addCreateRequest(promises, address);\n                        continue;\n                    }\n\n                    String privateAddress = instance.getPrivateAddress();\n                    if (privateAddress != null && networkCovers(privateAddress, networkAddress, networkMask))\n                    {\n                        InetAddress privateInet = InetAddress.getByName(privateAddress);\n                        Address address = new Address();\n                        address.setName(privateInet.getCanonicalHostName());\n                        address.setAddress(privateInet.getHostAddress());\n                        address.setInstance(ilink);\n                        nic.setAddress(address);\n                        modifiedNics.add(nic);\n                        addCreateRequest(promises, address);\n                    }\n\n                }\n                catch (Exception ex)\n                {\n                    logger.error(ex.getMessage(), ex);\n                    continue;\n                }\n            }\n        }\n\n        if (promises.size() > 0)\n        {\n            Promise<List<ApiResponse>> promise = Promise.sequence(promises);\n\n            return promise.flatMap(new Function<List<ApiResponse>, Promise<List<Address>>>() {\n\n                @Override\n                public Promise<List<Address>> invoke(List<ApiResponse> responses)\n                {\n                    List<Promise<Address>> addDNSPromises = new ArrayList<Promise<Address>>();\n\n                    //Add DNS entries if a DNSService is registered with the adapter\n                    if (dnsMapper != null)\n                    {\n                        for (NetworkInterface nic : modifiedNics)\n                        {\n                            Promise<Address> addAddressPromise =\n                                    dnsMapper.addAddress(instance, networks.get(nic.getNetwork().getId()), nic.getAddress());\n                            addDNSPromises.add(addAddressPromise);\n                        }\n                    }\n                    return Promise.sequence(addDNSPromises);\n                }\n\n            }).flatMap(new Function<List<Address>, Promise<InstanceResponse>>() {\n                @Override\n                public Promise<InstanceResponse> invoke(List<Address> arg)\n                {\n                    return buildResponse(instance, modifiedNics);\n                }\n            });\n        }\n        else\n        {\n            InstanceResponse response = new InstanceResponse();\n            response.setStatus(Status.COMPLETE);\n            return Promise.pure(response);\n        }\n    }\n\n    private DNSMapper getDNSMapper(List<ServiceProviderType> serviceProvidertypes, List<ServiceProvider> serviceProviders,\n            List<ServiceInstance> serviceInstances)\n    {\n\n        Optional<ServiceProviderType> dnsMapperTypeOptional = serviceProvidertypes.stream().filter(s -> {\n            List<Link> superTypes = s.getSuperTypes();\n            superTypes.addAll(s.getServiceTypeSuperTypes());\n            return superTypes.stream().filter(l -> IPAM.DNS_MAPPER_NAME.equals(l.getName())).findAny().isPresent();\n\n        }).findFirst();\n\n        final ServiceProviderType dnsMapperType = dnsMapperTypeOptional.isPresent() ? dnsMapperTypeOptional.get() : null;\n\n        if (dnsMapperType == null)\n        {\n            return null;\n        }\n\n        final Optional<ServiceProvider> dnsProviderOptional = serviceProviders.stream().filter(s -> {\n            return s.getType().getId() == dnsMapperType.getId();\n        }).findAny();\n\n        final ServiceProvider dnsProvider = dnsProviderOptional.isPresent() ? dnsProviderOptional.get() : null;\n\n        if (dnsProvider == null)\n        {\n            return null;\n        }\n\n        Optional<ServiceInstance> dnsMapperBindingOptional =\n                serviceInstances.stream().filter(s -> s.getId().equals(dnsProvider.getId())).findAny();\n\n        final ServiceInstance dnsMapper = dnsMapperBindingOptional.isPresent() ? dnsMapperBindingOptional.get() : null;\n\n        AsyncService dnsMapperService = svcRegistry.lookupServiceByProvider(dnsProvider);\n\n        if (dnsMapperService == null)\n        {\n            return null;\n        }\n\n        return new DNSMapper(dnsMapper, dnsProvider, dnsMapperService);\n\n    }\n\n    /**\n     * {@inheritDoc} In IPAM, this is when the mapping of a reserved address is removed.\n     */\n    @Override\n    public Promise<InstanceResponse> postStop(final InstancePostStopRequest request)\n    {\n        // check to see if the network associated with the template has changed,\n        // if so, and the cloud provider supports changing the network, release\n        // any static reservation as the reservation will change on restart\n        final Instance instance = request.getInstance();\n        Link cloud = instance.getCloud();\n\n        CloudPropertyRequest req = new CloudPropertyRequest();\n        req.setCloudId(cloud.getId());\n        req.setPropertyName(\"modelChangeSupported\");\n        req.setDefaultValue(false);\n        AsyncService api = svcRegistry.lookupApiService();\n        Promise<CloudPropertyResponse> cloudPromise = api.promise(req);\n        return cloudPromise.flatMap(new Function<CloudPropertyResponse, Promise<InstanceResponse>>() {\n\n            @Override\n            public Promise<InstanceResponse> invoke(CloudPropertyResponse resp)\n            {\n                if (resp.isValue())\n                {\n                    return removeMapping(request);\n                }\n                else\n                {\n                    InstanceResponse response = new InstanceResponse();\n                    response.setStatus(Status.COMPLETE);\n                    return Promise.pure(response);\n                }\n            }\n        });\n    }\n\n    private Promise<InstanceResponse> removeMapping(InstancePostStopRequest request)\n    {\n        logger.debug(\"Executing postStop...\");\n        // check to see if this instance is configured to use ipam\n        ServiceProviderType addressMapperType = null;\n        for (ServiceProviderType serviceProviderType : request.getServiceProviderTypes())\n        {\n            List<Link> superTypes = new ArrayList<Link>(serviceProviderType.getSuperTypes());\n            superTypes.addAll(serviceProviderType.getServiceTypeSuperTypes());\n            for (Link assetType : superTypes)\n            {\n                if (assetType.getName().equals(IPAM.ADDRESS_MAPPER_NAME))\n                {\n                    addressMapperType = serviceProviderType;\n                }\n            }\n        }\n\n        // there is not an address mapper do nothing\n        if (addressMapperType == null)\n        {\n            logger.warn(\"Did not find an addressMapper. Execution stopped.\");\n            InstanceResponse response = new InstanceResponse();\n            response.setStatus(Status.COMPLETE);\n            return Promise.pure(response);\n        }\n\n        // lookup the corresponding service provider and binding\n        ServiceProvider mapperProvider = null;\n        for (ServiceProvider serviceProvider : request.getServiceProviders())\n        {\n            if (serviceProvider.getType().getId() == addressMapperType.getId())\n            {\n                mapperProvider = serviceProvider;\n            }\n        }\n\n        ServiceInstance mapperBinding = null;\n        for (ServiceInstance serviceInstance : request.getPeerServiceInstances())\n        {\n            if (serviceInstance.getProvider().getId() == mapperProvider.getId())\n            {\n                mapperBinding = serviceInstance;\n            }\n\n        }\n\n        AsyncService mapperService = null;\n        if (mapperProvider != null)\n        {\n            mapperService = svcRegistry.lookupServiceByProvider(mapperProvider);\n        }\n        if (mapperService == null)\n        {\n            return Promise.pure(new Exception(\"Unable to resolve service mapper: \" + mapperProvider.getName()));\n        }\n\n        final Instance instance = request.getInstance();\n        final Template template = request.getTemplate();\n        final Map<String, Link> templateNetworks = new HashMap<String, Link>();\n        for (Resource resource : template.getResources())\n        {\n            if (resource instanceof NetworkInterface)\n            {\n                Link resourceNet = ((NetworkInterface) resource).getNetwork();\n                templateNetworks.put(resource.getName(), resourceNet);\n            }\n        }\n\n        final Map<Integer, Network> instanceNetworks = new HashMap<Integer, Network>();\n        for (Network network : request.getNetworks())\n        {\n            instanceNetworks.put(network.getId(), network);\n        }\n\n        // iterate through the network interfaces on the instance and attempt to remove an address for each\n        final AddressMapper ipamMapper = new AddressMapper(mapperBinding, mapperProvider, mapperService);\n        List<Promise<NetworkInterface>> promises = new ArrayList<Promise<NetworkInterface>>();\n        for (Resource resource : instance.getResources())\n        {\n            if (resource instanceof NetworkInterface)\n            {\n                NetworkInterface nic = (NetworkInterface) resource;\n                Link existing = nic.getNetwork();\n                if (existing == null)\n                {\n                    continue;\n                }\n\n                Network network = instanceNetworks.get(existing.getId());\n                if (network == null)\n                {\n                    continue;\n                }\n\n                // if the selected network has changed need to release any mapping\n                // associated with the current network selection as the network will\n                // be changed on restart\n                Link selected = templateNetworks.get(nic.getName());\n                if (selected == null || selected.getId() != existing.getId())\n                {\n                    if (nic.getPhysicalAddress() != null && ipamMapper.hasBinding())\n                    {\n                        // attempt to remove address mapping\n                        Promise<NetworkInterface> removeAddressPromise =\n                                ipamMapper.removeAddress(instance, nic, network, nic.getAddress());\n                        promises.add(removeAddressPromise);\n                    }\n                }\n            }\n        }\n\n        if (promises.size() > 0)\n        {\n            Promise<List<NetworkInterface>> promise = Promise.sequence(promises);\n            return promise.flatMap(new Function<List<NetworkInterface>, Promise<InstanceResponse>>() {\n\n                @Override\n                public Promise<InstanceResponse> invoke(List<NetworkInterface> nics)\n                {\n                    return buildResponse(instance, nics);\n                }\n\n            });\n        }\n        else\n        {\n            InstanceResponse response = new InstanceResponse();\n            response.setStatus(Status.COMPLETE);\n            return Promise.pure(response);\n        }\n    }\n\n    private void addCreateRequest(List<Promise<ApiResponse>> promises, Address address)\n    {\n        CreateRequest req = new CreateRequest();\n        req.setAsset(address);\n        AsyncService api = svcRegistry.lookupApiService();\n        Promise<ApiResponse> promise = api.promise(req);\n        promises.add(promise);\n    }\n\n    private boolean isAddressAndMaskSet(Network network)\n    {\n        String addr = network.getNetworkAddress();\n        if (addr == null)\n        {\n            return false;\n        }\n        String mask = network.getNetworkMask();\n        if (mask == null)\n        {\n            return false;\n        }\n        return true;\n    }\n\n    private boolean networkCovers(String address, String networkAddress, String networkMask)\n    {\n        try\n        {\n            InetAddress addr = InetAddress.getByName(address);\n            InetAddress netAddr = InetAddress.getByName(networkAddress);\n            InetAddress maskAddr = InetAddress.getByName(networkMask);\n            return networkCovers(addr, netAddr, maskAddr);\n        }\n        catch (Exception ex)\n        {\n            logger.error(ex.getMessage(), ex);\n            return false;\n        }\n    }\n\n    private boolean networkCovers(InetAddress address, InetAddress networkAddress, InetAddress networkMask)\n    {\n        byte[] bnet = networkAddress.getAddress();\n        byte[] bmask = networkMask.getAddress();\n        byte[] baddr = address.getAddress();\n        for (int i = 0; i < baddr.length; i++)\n        {\n            if ((baddr[i] & bmask[i]) != bnet[i])\n            {\n                return false;\n            }\n        }\n        return true;\n    }\n\n}\n",
+			"settings":
+			{
+				"buffer_size": 39181,
+				"line_ending": "Unix",
+				"name": "package com.servicemesh.agility.adapters.service.i"
+			}
+		},
+		{
+			"contents": " /**\n     * {@inheritDoc} In IPAM, this is when remove and release address occur.\n     */\n    @Override\n    public Promise<InstanceResponse> postRelease(InstancePostReleaseRequest request)\n    {\n        logger.debug(\"Executing postRelease...\");\n        // check to see if this instance is configured to use ipam\n        ServiceProviderType addressProviderType = null;\n        ServiceProviderType addressMapperType = null;\n\n        for (ServiceProviderType serviceProviderType : request.getServiceProviderTypes())\n        {\n            List<Link> superTypes = new ArrayList<Link>(serviceProviderType.getSuperTypes());\n            superTypes.addAll(serviceProviderType.getServiceTypeSuperTypes());\n            for (Link assetType : superTypes)\n            {\n                switch (assetType.getName())\n                {\n                    case IPAM.ADDRESS_PROVIDER_NAME:\n                        addressProviderType = serviceProviderType;\n                        break;\n                    case IPAM.ADDRESS_MAPPER_NAME:\n                        addressMapperType = serviceProviderType;\n                        break;\n                    default:\n                        break;\n                }\n            }\n        }\n\n        // there is not an address provider do nothing\n        if (addressProviderType == null)\n        {\n            logger.warn(\"Did not find an addressProvider. Execution stopped.\");\n            InstanceResponse response = new InstanceResponse();\n            response.setStatus(Status.COMPLETE);\n            return Promise.pure(response);\n        }\n\n        // there is not an address mapper do nothing\n        if (addressMapperType == null)\n        {\n            logger.warn(\"Did not find an addressMapper. Execution stopped.\");\n            InstanceResponse response = new InstanceResponse();\n            response.setStatus(Status.COMPLETE);\n            return Promise.pure(response);\n        }\n\n        // lookup the corresponding service provider and binding\n        ServiceProvider addressProvider = null;\n        ServiceProvider mapperProvider = null;\n        for (ServiceProvider serviceProvider : request.getServiceProviders())\n        {\n            if (serviceProvider.getType().getId() == addressProviderType.getId())\n            {\n                addressProvider = serviceProvider;\n            }\n            if (serviceProvider.getType().getId() == addressMapperType.getId())\n            {\n                mapperProvider = serviceProvider;\n            }\n        }\n        if (addressProvider == null)\n        {\n            return Promise.pure(new Exception(\"Network service not configured\"));\n        }\n\n        ServiceInstance addressBinding = null;\n        ServiceInstance mapperBinding = null;\n        for (ServiceInstance serviceInstance : request.getPeerServiceInstances())\n        {\n            if (serviceInstance.getProvider().getId() == addressProvider.getId())\n            {\n                addressBinding = serviceInstance;\n            }\n            if (serviceInstance.getProvider().getId() == mapperProvider.getId())\n            {\n                mapperBinding = serviceInstance;\n            }\n\n        }\n        if (addressBinding == null)\n        {\n            return Promise.pure(new Exception(\"Network service not configured\"));\n        }\n\n        AsyncService providerService = svcRegistry.lookupServiceByProvider(addressProvider);\n        if (providerService == null)\n        {\n            return Promise.pure(new Exception(\"Unable to resolve service provider: \" + addressProvider.getName()));\n        }\n\n        AsyncService mapperService = null;\n        if (mapperProvider != null)\n        {\n            mapperService = svcRegistry.lookupServiceByProvider(mapperProvider);\n        }\n        if (mapperService == null)\n        {\n            return Promise.pure(new Exception(\"Unable to resolve service mapper: \" + mapperProvider.getName()));\n        }\n\n        final Instance instance = request.getInstance();\n        final Map<Integer, Network> networks = new HashMap<Integer, Network>();\n        for (Network network : request.getNetworks())\n        {\n            networks.put(network.getId(), network);\n        }\n\n        // iterate through the network interfaces on the instance and attempt to remove and release an address for each\n        final AddressProvider ipamProvider = new AddressProvider(addressBinding, addressProvider, providerService);\n        final AddressMapper ipamMapper = new AddressMapper(mapperBinding, mapperProvider, mapperService);\n        List<Promise<?>> promises = new ArrayList<Promise<?>>();\n\n        //Remove any DNS entries for the addresses and the host\n        final DNSMapper dnsMapper =\n                getDNSMapper(request.getServiceProviderTypes(), request.getServiceProviders(), request.getPeerServiceInstances());\n        if (dnsMapper != null)\n        {\n            modifyDNSEntries(instance, networks, promises, dnsMapper, false);\n        }\n\n        for (Resource resource : instance.getResources())\n        {\n            if (resource instanceof NetworkInterface)\n            {\n                NetworkInterface nic = (NetworkInterface) resource;\n                Link networkLink = nic.getNetwork();\n                if (networkLink == null)\n                {\n                    continue;\n                }\n\n                Network network = networks.get(networkLink.getId());\n                if (network == null)\n                {\n                    continue;\n                }\n\n                Address address = nic.getAddress();\n                if (address == null)\n                {\n                    continue;\n                }\n\n                // attempt to remove address mapping\n                String poolServiceProviderTypeName = ipamProvider.get_provider().getType().getName();\n                // if the pool is IPAM Agility Pool then we must call removeAddress otherwise as in the case\n                // for bluecat it may not be necessary.\n                if (ipamMapper.hasBinding() && \"IPAM Agility Pool\".equals(poolServiceProviderTypeName))\n                {\n                    Promise<NetworkInterface> removeAddressPromise = ipamMapper.removeAddress(instance, nic, network, address);\n                    promises.add(removeAddressPromise);\n                }\n\n                //Get template's networkinterface's ip address to pass to release address\n                //This may need to be changed to support multiple nics\n                Address templateAddress = null;\n                List<Resource> resources = request.getTemplate().getResources();\n                for (Resource res : resources)\n                {\n                    if (res instanceof NetworkInterface)\n                    {\n                        templateAddress = ((NetworkInterface) res).getAddress();\n                    }\n                }\n\n                // release address back to the pool\n                Promise<NetworkInterface> releseAddressPromise =\n                        ipamProvider.releaseAddress(instance, nic, network, address, templateAddress);\n\n                promises.add(releseAddressPromise);\n            }\n        }\n\n        if (promises.size() > 0)\n        {\n            Promise<List<Object>> promise = Promise.sequenceAny(promises);\n            return promise.flatMap(new Function<List<Object>, Promise<InstanceResponse>>() {\n\n                @Override\n                public Promise<InstanceResponse> invoke(List<Object> objects)\n                {\n                    List<NetworkInterface> nics = objects.stream().filter(i -> i instanceof NetworkInterface)\n                            .map(i -> (NetworkInterface) i).collect(Collectors.toList());\n                    return buildResponse(instance, nics);\n                }\n            });\n        }\n        else\n        {\n            InstanceResponse response = new InstanceResponse();\n            response.setStatus(Status.COMPLETE);\n            return Promise.pure(response);\n        }\n    }",
+			"settings":
+			{
+				"buffer_size": 7962,
+				"line_ending": "Unix",
+				"name": "/**"
+			}
+		},
+		{
+			"contents": "curl -k1 -u admin:infoblox -H \"Content-Type: application/json\" \\\n-X POST https://192.168.36.4/wapi/v2.2.2/record:host -d \\\n'{\"ipv4addrs\":[{\"ipv4addr\":\"192.168.36.9\"}],\"name\":\"i-000000d6.infoblox.localdomain\"}'\n\n\n",
+			"settings":
+			{
+				"buffer_size": 212,
+				"line_ending": "Unix",
+				"name": "curl -k1 -u admin:infoblox -H \"Content-Type: appli"
 			}
 		}
 	],
@@ -72,9 +314,33 @@
 	"command_palette":
 	{
 		"height": 392.0,
-		"last_filter": "prett",
+		"last_filter": "pre",
 		"selected_items":
 		[
+			[
+				"pre",
+				"HTMLPrettify"
+			],
+			[
+				"json",
+				"JSON Reindent: reindent file or selection"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"Pre",
+				"HTMLPrettify"
+			],
+			[
+				"CSS",
+				"CSS Completions: Prune Cache"
+			],
+			[
+				"H",
+				"HTMLPrettify"
+			],
 			[
 				"prett",
 				"HTMLPrettify"
@@ -96,16 +362,8 @@
 				"Package Control: Install Package"
 			],
 			[
-				"Pre",
-				"HTMLPrettify"
-			],
-			[
 				"Ins",
 				"Package Control: Install Package"
-			],
-			[
-				"pre",
-				"HTMLPrettify"
 			],
 			[
 				"INstall",
@@ -149,23 +407,40 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/srirammantha/source/portfoliomanager"
+		"/Users/srirammantha/source/portfoliomanager",
+		"/Users/srirammantha/source/portfoliomanager/src",
+		"/Users/srirammantha/source/portfoliomanager/src/main",
+		"/Users/srirammantha/source/portfoliomanager/src/main/webapp",
+		"/Users/srirammantha/source/portfoliomanager/src/main/webapp/app",
+		"/Users/srirammantha/source/portfoliomanager/src/main/webapp/app/home"
 	],
 	"file_history":
 	[
-		"/Users/srirammantha/source/portfoliomanager/src/main/webapp/app/home/watchlist.html",
+		"/Users/srirammantha/source/portfoliomanager/src/main/webapp/index.html",
+		"/Users/srirammantha/source/portfoliomanager/src/main/webapp/app/components/watchlist/watchlistmini.directive.js",
+		"/Users/srirammantha/source/portfoliomanager/src/main/webapp/app/components/form/minbytes.directive.js",
+		"/Users/srirammantha/source/portfoliomanager/src/main/webapp/app/layouts/navbar/material-navbar.html",
+		"/Users/srirammantha/source/portfoliomanager/src/main/webapp/app/home/watchlist-add-dialog.html",
 		"/Users/srirammantha/source/portfoliomanager/src/main/webapp/app/home/home.controller.js",
+		"/Users/srirammantha/Library/Application Support/Sublime Text 3/Packages/User/Distraction Free.sublime-settings",
+		"/Users/srirammantha/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/srirammantha/source/portfoliomanager/node_modules/generator-jhipster/generators/server/templates/_gradle.properties",
+		"/Users/srirammantha/source/portfoliomanager/gulpfile.js",
+		"/Users/srirammantha/source/portfoliomanager/target/portfoliomanager-0.0.1-SNAPSHOT/index.html",
+		"/Users/srirammantha/source/portfoliomanager/src/main/webapp/app/components/watchlist-mini-directive.js",
+		"/Users/srirammantha/source/portfoliomanager/src/main/java/com/manthalabs/portfoliomanager/web/rest/WatchlistResource.java",
+		"/Users/srirammantha/source/portfoliomanager/node_modules/twig/index.html",
+		"/Users/srirammantha/source/portfoliomanager/src/main/webapp/app/home/watchlist.html",
 		"/Users/srirammantha/source/portfoliomanager/src/main/webapp/app/home/home.state.js",
 		"/Users/srirammantha/source/portfoliomanager/bower.json",
 		"/Users/srirammantha/source/portfoliomanager/src/main/webapp/app/app.module.js",
 		"/Users/srirammantha/source/portfoliomanager/src/main/webapp/content/css/colors.css",
-		"/Users/srirammantha/source/portfoliomanager/src/main/webapp/index.html",
 		"/Users/srirammantha/source/agility/karaf/log/agility.log",
 		"/Users/srirammantha/source/agility/rpm/SPECS/agility-platform-server.spec"
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -179,6 +454,37 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"delete",
+			"watchlistDetail",
+			"delete",
+			"td",
+			"watchlistDetail",
+			"account",
+			"error",
+			"watchlist",
+			"inject:app",
+			"wire",
+			"alert",
+			"form",
+			"angularFilesort",
+			"index.html",
+			"component",
+			"inject:dep",
+			"inject",
+			"watch",
+			"login",
+			"util",
+			"home",
+			"directive",
+			"getWatchLists",
+			"templateUrl",
+			"watchlists",
+			"          \n",
+			"NewWatchlistController",
+			"getWatchList",
+			"\">{{",
+			"main.css",
+			"                       \n",
 			"currentWatchlist",
 			"fab",
 			"plus",
@@ -218,16 +524,219 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 20,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "package.json",
-					"semi_transient": true,
+					"file": "node_modules/abab/index.js",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1841,
+						"buffer_size": 133,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								133,
+								133
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								}
+							],
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/main/webapp/app/home/watchlist.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4140,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2335,
+								2335
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								}
+							],
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 307.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "bower.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1347,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								833,
+								833
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								}
+							],
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/main/webapp/app/home/home.controller.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8319,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7934,
+								7934
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								}
+							],
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3991.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/main/webapp/app/app.module.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 709,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								561,
+								561
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								}
+							],
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/main/webapp/app/components/watchlist/watchlistmini.directive.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 477,
 						"regions":
 						{
 						},
@@ -251,9 +760,596 @@
 									"selector": "text.html"
 								}
 							],
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/main/webapp/app/home/watchlist-mini.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1277,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								506,
+								506
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								}
+							],
+							"auto_name": "watchlist-mini.html",
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "src/main/webapp/app/home/watchlist-all.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 305,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								290,
+								290
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								}
+							],
+							"auto_name": "watchlist-all.html",
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "src/main/webapp/bower_components/google-material-color/dist/palette.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 30234,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								}
+							],
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1149.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 20,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "src/main/webapp/content/css/main.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8885,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7433,
+								7433
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								}
+							],
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 18,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "src/main/webapp/content/css/app.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 72,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								72,
+								72
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								}
+							],
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 19,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "src/main/webapp/app/home/home.state.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1797,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								976,
+								976
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								}
+							],
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "src/main/webapp/content/css/vendor.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 151387,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1985,
+								1985
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								}
+							],
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2346.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 17,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "node_modules/weinre/web/doc/Home.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10807,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								}
+							],
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "src/main/webapp/app/layouts/navbar/navbar.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8216,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6664,
+								6664
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								}
+							],
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "gulpfile.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8410,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6357,
+								6357
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								}
+							],
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "node_modules/ast-query/Gruntfile.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 501,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								501,
+								501
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								}
+							],
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 844,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								436,
+								453
+							]
+						],
+						"settings":
+						{
+							"auto_name": "{ \"watchlistName\": \"Emerging\", \"totalGainLoss\": 0.",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 39181,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								36880,
+								37521
+							]
+						],
+						"settings":
+						{
+							"auto_name": "package com.servicemesh.agility.adapters.service.i",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 16691.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7962,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6689,
+								6689
+							]
+						],
+						"settings":
+						{
+							"auto_name": "/**",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2961.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 20,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 212,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								212,
+								212
+							]
+						],
+						"settings":
+						{
+							"auto_name": "curl -k1 -u admin:infoblox -H \"Content-Type: appli",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -322,16 +1418,88 @@
 		"selected_items":
 		[
 			[
-				"home",
-				"src/main/webapp/app/home/home.html"
+				"bower",
+				"portfoliomanager/bower.json"
 			],
 			[
-				"bowe",
-				"portfoliomanager/bower.json"
+				"watchlista",
+				"portfoliomanager/src/main/webapp/app/home/watchlist-all.html"
+			],
+			[
+				"watchlist",
+				"portfoliomanager/src/main/webapp/app/home/watchlist.html"
 			],
 			[
 				"index.html",
 				"portfoliomanager/src/main/webapp/index.html"
+			],
+			[
+				"gradle",
+				"portfoliomanager/node_modules/generator-jhipster/generators/server/templates/_gradle.properties"
+			],
+			[
+				"grun",
+				"portfoliomanager/node_modules/ast-query/Gruntfile.js"
+			],
+			[
+				"gulp",
+				"portfoliomanager/gulpfile.js"
+			],
+			[
+				"inde",
+				"portfoliomanager/target/portfoliomanager-0.0.1-SNAPSHOT/index.html"
+			],
+			[
+				"gu",
+				"portfoliomanager/gulpfile.js"
+			],
+			[
+				"mater",
+				"portfoliomanager/src/main/webapp/app/layouts/navbar/material-navbar.html"
+			],
+			[
+				"nav",
+				"portfoliomanager/src/main/webapp/app/layouts/navbar/navbar.html"
+			],
+			[
+				"home",
+				"portfoliomanager/node_modules/weinre/web/doc/Home.html"
+			],
+			[
+				"home.",
+				"portfoliomanager/src/main/webapp/app/home/home.controller.js"
+			],
+			[
+				"pale",
+				"portfoliomanager/src/main/webapp/bower_components/google-material-color/dist/palette.css"
+			],
+			[
+				"app.css",
+				"portfoliomanager/src/main/webapp/content/css/app.css"
+			],
+			[
+				"main.css",
+				"portfoliomanager/src/main/webapp/content/css/main.css"
+			],
+			[
+				"watchlistre",
+				"src/main/java/com/manthalabs/portfoliomanager/web/rest/WatchlistResource.java"
+			],
+			[
+				"watc",
+				"src/main/webapp/app/home/watchlist.html"
+			],
+			[
+				"index.ht",
+				"node_modules/twig/index.html"
+			],
+			[
+				"watchli",
+				"src/main/webapp/app/home/watchlist.html"
+			],
+			[
+				"bowe",
+				"portfoliomanager/bower.json"
 			]
 		],
 		"width": 0.0
@@ -347,16 +1515,25 @@
 	},
 	"select_symbol":
 	{
-		"height": 0.0,
+		"height": 392.0,
 		"last_filter": "",
 		"selected_items":
 		[
 		],
-		"width": 0.0
+		"width": 1160.0
 	},
 	"selected_group": 0,
 	"settings":
 	{
+		"last_automatic_layout":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		]
 	},
 	"show_minimap": true,
 	"show_open_files": false,
@@ -366,5 +1543,6 @@
 	"status_bar_visible": true,
 	"template_settings":
 	{
+		"max_columns": 3
 	}
 }

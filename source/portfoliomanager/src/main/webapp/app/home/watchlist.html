@@ -6,8 +6,11 @@
                 <i class="material-icons">close</i>
             </md-button>
             <ul>
+                <li>
+                    <md-button class="md-mini" ng-href="#/watchlist-all" aria-label="description" md-ripple-size="full">All</md-button>
+                </li>
                 <li ng-repeat="w in watchlists">
-                    <md-button class="md-mini" ng-click='selectWatchlist(w.id)' aria-label="description" md-ripple-size="full">{{w.name}}</md-button>
+                    <md-button class="md-mini" ng-href='#/watchlist?watchlist={{w.id}}' aria-label="description" md-ripple-size="full" ng-click="selectWatchlist(w.id)">{{w.name}}</md-button>
                     <li>
                         <md-button class="md-primary md-raised" md-ripple-size="full" ng-click="addWatchlist()">add</md-button>
                     </li>
@@ -20,49 +23,82 @@
     </md-button>
     <md-content class="md-padding" flex>
         <div ng-cloak>
-            <md-list class="md-padding">
-                <div ng-repeat="detail in watchlistDetail" >
-                    <div flex="50" class="md-margin layout-column md-padding palette-Blue-Grey-100 bg">
-                        <div layout="row"  layout-wrap>
-                            <div flex class="md-headline">{{detail.quote.ticker}}</div>
-                            <div flex class="md-caption">{{detail.quote.name}}</div>
-                            <div  class="md-title" flex>{{detail.quote.currentPrice}}</div>
-                            <div flex class="md-title" ng-class="detail.quote.currentPrice > 0 ? 'palette-Green-700 text' : 'palette-Red-700 text'">{{detail.quote.change}}</div>
-                            <div flex><span class="md-caption">Qty:</span>{{detail.qty}}</div>
-                            <div flex><span class="md-caption">Gain/Loss:</span>{{detail.gain}}</div>
-                        </div>
-                        <div class="layout-row md-margin">
-                            <div flex><span class="md-caption">low:</span>{{detail.quote.daysLow}}</div>
-                            <div flex><span class="md-caption">high:</span>{{detail.quote.daysHigh}}</div>
-                            <div flex><span class="md-caption">mCap:</span>{{detail.quote.marketCapitalization}}</div>
-                            <div flex><span class="md-caption">DY:</span>{{detail.quote.dividendYield}}</div>
-                        </div>
-                        <div class="layout-row">
-                            <md-button flex="5" class="md-icon-button"  style=" font-size: 18px;" ng-click="deleteStockItem(detail.quote.ticker)">
-                                <i class="material-icons md-48">delete</i>
-                            </md-button>
-                            <md-button flex="5" class="md-icon-button" ng-click="editStockItem()">
-                                <i class="material-icons md-48">edit</i>
-                            </md-button>
-                        </div>
-                    </div>
-
+            <div class="layout-row palette-Lime-600 bg">
+                <div class="md-title md-padding">{{watchlistDetail.watchlistName}}</div>
+                <md-input-container>
+                    <md-checkbox ng-model="watchlistDetail.ira" name="string" ng-disabled="true" aria-label="Is IRA">Is IRA</md-checkbox>
+                </md-input-container>
+                <div ng-show="watchlistDetail.ira">
+                    <md-input-container>
+                        <md-checkbox ng-model="aggressive" ng-true-value="true" name="aggressive" aria-label="Aggresive">
+                            Aggresive Portofolio
+                        </md-checkbox>
+                    </md-input-container>
+                    <md-input-container>
+                        <md-checkbox md-no-ink ng-model="moderate" ng-true-value="true" name="moderate" aria-label="Moderate">
+                            Moderate Portfolio
+                        </md-checkbox>
+                    </md-input-container>
+                    <md-input-container>
+                        <md-checkbox md-no-ink ng-model="conservative" ng-true-value="true" name="conservative" aria-label="Conservative">
+                            Conservative Portfolio
+                        </md-checkbox>
+                    </md-input-container>
                 </div>
-            </md-list>
-        </div>
-    </md-content>
-    <md-button class="md-fab md-fab-bottom-right" aria-label="Use Android" ng-click="addToWatchlist()">
-        +</md-icon>
-    </md-button>
-    <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" md-component-id="right" class="md-sidenav-right md-whiteframe-z1 palette-Light-Blue-800 bg">
-        <md-content class="layout-column" class="md-padding md-margin">
-            <div layout="row" layout-align="center center" class="palette-Light-Blue-800 bg">
-                <i class="material-icons" layout-align="center center">alarm</i>
             </div>
-            <md-list class="palette-Amber-800 text">
-                <md-list-item class="md-3-line" ng-repeat="m in messages">
+            <table class="md-padding palette-Blue-Grey-100 bg table" ng-repeat="detail in watchlistDetail.watchLists">
+                <tr>
+                    <td class="md-headline">{{detail.quote.ticker}}</td>
+                    <td class="md-headline">{{detail.quote.name}}</td>
+                    <td class="md-headline">{{detail.quote.currentPrice}}</td>
+                    <td class="md-headline" ng-class="detail.quote.currentPrice > 0 ? 'palette-Green-700 text' : 'palette-Red-700 text'">{{detail.quote.change}}$</td>
+                    <td>
+                        <md-button class="md-icon-button" style=" font-size: 18px;" ng-click="deleteStockItem(detail.quote.ticker)" confirm="Are you sure, you want to remove stock {{detail.quote.ticker}}">
+                            <i class="material-icons">delete</i></md-button>
+                        </md-button>
+                        <md-button class="md-icon-button" ng-click="editStockItem()">
+                            <i class="material-icons">edit</i>
+                        </md-button>
+                    </td>
+                </tr>
+                <tr ng-show="detail.qty > 0">
+                    <td><span>Qty:{{aggressive}}    </span>{{detail.qty}}</td>
+                    <td><span>Gain/Loss:</span>
+                        <span ng-class="detail.gain > 0 ? 'palette-Green-700 text' : 'palette-Red-700 text'">{{detail.gain}}</span>
+                    </td>
+                    <td>
+                        <span>Acc: {{detail.accountPercentage}}%</span>
+                    </td>
+                    <td>
+                        <span ng-show="aggressive">Agg Rec: {{detail.recPecAggr}}%</span>
+                        <span ng-show="moderate">Moderate Rec: {{detail.recPecModerate}}%</span>
+                        <span ng-show="conservative">Conservative Rec: {{detail.recPecConservative}}%</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="md-caption">low:</span>{{detail.quote.daysLow}}</td>
+                    <td><span class="md-caption">high:</span>{{detail.quote.daysHigh}}</td>
+                    <td><span class="md-caption">mCap:</span>{{detail.quote.marketCapitalization}}</td>
+                    <td><span class="md-caption">DY:</span>{{detail.quote.dividendYield}}</td>
+                </tr>
+                <tr>
+                </tr>
+            </table>
+        </div>
+        <md-button class="md-raised md-primary"  ng-click="addToWatchlist()"> Add Stock
+        </md-button>
+        <md-button class="md-warn md-raised" ng-click="deleteWatchList(currentWatchlist)">
+            Delete Watchlist
+        </md-button>
+    </md-content>
+    <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" md-component-id="right" class="md-sidenav-right md-whiteframe-z1 palette-Light-Blue-800">
+        <md-content class="layout-column" class="md-padding md-margin">
+            <div layout="row" layout-align="center center">
+                <text class="md-headline" layout-align="center center">Messages</text>
+            </div>
+            <md-list class="palette-Blue-800 text">
+                <md-list-item class="md-1-line md-whiteframe-z1" ng-repeat="m in messages.messages">
                     <div class="md-list-item-text">{{m.message}}</div>
-                    <md-divider></md-divider>
                 </md-list-item>
             </md-list>
         </md-content>

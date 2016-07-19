@@ -4,9 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.manthalabs.portfoliomanager.analytics.Analysis;
-import com.manthalabs.portfoliomanager.analytics.WatchlistStockItemAnalysis;
 import com.manthalabs.portfoliomanager.analytics.WatchlistItemAnalysisRule;
+import com.manthalabs.portfoliomanager.analytics.WatchlistStockItemAnalysis;
 import com.manthalabs.portfoliomanager.domain.Quote;
+import com.manthalabs.portfoliomanager.domain.Watchlist;
 import com.manthalabs.portfoliomanager.domain.WatchlistItem;
 import com.manthalabs.portfoliomanager.service.YahooFinanceQuoteService;
 
@@ -17,13 +18,13 @@ public class WatchListItemPriceChange implements WatchlistItemAnalysisRule {
 	private YahooFinanceQuoteService yahooFinanceQuoteService;
 
 	@Override
-	public void run(WatchlistStockItemAnalysis analysisResults, WatchlistItem w) {
+	public void run(WatchlistStockItemAnalysis analysisResults, Watchlist w, WatchlistItem wi) {
 
-		Quote q = yahooFinanceQuoteService.getQuote(w.getStock());
+		Quote q = yahooFinanceQuoteService.getQuote(wi.getStock());
 
-		if (Float.valueOf(q.getChange()) > 10) {
+		if (Float.valueOf(q.getChange()) > 2) {
 
-			analysisResults.addAnalysis(new Analysis(w.getStock() + " as risen more that 10% today"));
+			analysisResults.addAnalysis(new Analysis(wi.getStock() + " as risen more that 2% today"));
 		}
 	}
 }

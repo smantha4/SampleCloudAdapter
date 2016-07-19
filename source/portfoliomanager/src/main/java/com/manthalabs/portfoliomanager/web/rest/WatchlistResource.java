@@ -1,6 +1,7 @@
 package com.manthalabs.portfoliomanager.web.rest;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.apache.commons.lang.Validate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,11 +16,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.manthalabs.portfoliomanager.analytics.AnalysisWorkFlow;
 import com.manthalabs.portfoliomanager.analytics.WatchlistStockItemAnalysis;
 import com.manthalabs.portfoliomanager.domain.Watchlist;
+import com.manthalabs.portfoliomanager.domain.WatchlistItem;
+import com.manthalabs.portfoliomanager.domain.WatchlistItem.WatchlistQtyLineItem;
 import com.manthalabs.portfoliomanager.repository.WatchlistItemAnalysisRepository;
+import com.manthalabs.portfoliomanager.repository.WatchlistItemRepository;
 import com.manthalabs.portfoliomanager.repository.WatchlistRepository;
 import com.manthalabs.portfoliomanager.service.WatchlistService;
+import com.manthalabs.portfoliomanager.web.rest.dto.AddWatchlistDTO;
 import com.manthalabs.portfoliomanager.web.rest.dto.AddWatchlistStockItem;
 import com.manthalabs.portfoliomanager.web.rest.dto.MessagesDTO;
 import com.manthalabs.portfoliomanager.web.rest.dto.MessagesDTO.MessageDTO;
@@ -38,6 +44,12 @@ public class WatchlistResource {
 
 	@Autowired
 	private WatchlistItemAnalysisRepository watchlistItemAnalysisRepository;
+
+	@Autowired
+	private WatchlistItemRepository watchlistItemRepository;
+
+	@Autowired
+	private AnalysisWorkFlow analysisWorkFlow;
 
 	/**
 	 * Get list of watchlists
@@ -59,10 +71,7 @@ public class WatchlistResource {
 	 */
 	@RequestMapping(value = "/watchlist/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public WatchlistDTO getWatchList(@PathVariable String id) {
-
-		WatchlistDTO w = new WatchlistDTO();
-		w.setWatchLists(watchListService.getWatchlistStockItems(id));
-		return w;
+		return watchListService.getWatchlistStockItems(id);
 
 	}
 
@@ -78,10 +87,12 @@ public class WatchlistResource {
 	}
 
 	@RequestMapping(value = "/watchlist", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-	public void createWatchlist(@RequestBody String name) {
-		Validate.notNull(name, "Watchlistname cannot be null");
+	public void createWatchlist(@RequestBody AddWatchlistDTO addWatchlistDTO) {
+		Validate.notNull(addWatchlistDTO.getName(), "Watchlistname cannot be null");
 		Watchlist w = new Watchlist();
-		w.setName(name);
+		w.setName(addWatchlistDTO.getName());
+		w.setIRA(addWatchlistDTO.isIRA());
+
 		watchlistRepository.save(w);
 	}
 
@@ -106,7 +117,7 @@ public class WatchlistResource {
 
 		watchlistRepository.save(w);
 
-		return new ResponseEntity<String>("Success", HttpStatus.OK);
+		return new ResponseEntity<String>("{\"result\":\"success\"}", HttpStatus.OK);
 
 	}
 
@@ -119,9 +130,26 @@ public class WatchlistResource {
 	@RequestMapping(value = "/watchlist/{id}", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody ResponseEntity<String> deleteWatchlist(@PathVariable String id) {
 
-		watchlistRepository.delete(id);
+		Watchlist w = watchlistRepository.findOne(id);
 
-		return new ResponseEntity<String>("Success", HttpStatus.OK);
+		if (w != null) {
+
+			w.getStocks().stream().forEach(s -> {
+				WatchlistItem wi = watchlistItemRepository.findOne(s);
+
+				if (wi != null) {
+					List<WatchlistQtyLineItem> items = wi.getQtyLineItems().stream()
+							.filter(i -> i.getWatchlist().equals(id)).collect(Collectors.toList());
+					wi.getQtyLineItems().removeAll(items);
+					watchlistItemRepository.save(wi);
+
+				}
+			});
+
+			watchlistRepository.delete(id);
+		}
+
+		return new ResponseEntity<String>("{\"result\":\"success\"}", HttpStatus.OK);
 
 	}
 
@@ -136,6 +164,10 @@ public class WatchlistResource {
 
 		Watchlist w = watchlistRepository.findOne(watchlistid);
 
+		// For now lets run the workflow
+		analysisWorkFlow.runAnalysis(w);
+
+		// We only want to show messages for this Watchlist
 		List<String> stocks = w.getStocks();
 
 		MessagesDTO ms = new MessagesDTO();
@@ -146,6 +178,8 @@ public class WatchlistResource {
 				wsa.getResults().stream().forEach(a -> ms.getMessages().add(new MessageDTO(a.getMessage())));
 			}
 		});
+
+		ms.getMessages().add(new MessageDTO("Analysis successful for watchlist	"));
 
 		return ms;
 	}

@@ -5,9 +5,9 @@
         .module('portfoliomanagerApp')
         .controller('HomeController', HomeController);
 
-    HomeController.$inject = ['$scope', 'Principal', 'LoginService', '$state', '$http', '$mdSidenav', '$mdDialog', '$mdMedia'];
+    HomeController.$inject = ['$scope', 'Principal', 'LoginService', '$state', '$http', '$mdSidenav', '$mdDialog', '$mdMedia', '$location'];
 
-    function HomeController($scope, Principal, LoginService, $state, $http, $mdSidenav, $mdDialog, $mdMedia) {
+    function HomeController($scope, Principal, LoginService, $state, $http, $mdSidenav, $mdDialog, $mdMedia, $location) {
         var vm = this;
 
         $scope.showQuotes = false;
@@ -16,6 +16,7 @@
         vm.isAuthenticated = null;
         vm.login = LoginService.open;
         vm.register = register;
+
         $scope.$on('authenticationSuccess', function() {
             getAccount();
         });
@@ -51,6 +52,9 @@
             $mdSidenav('nav').toggle();
         };
 
+        $scope.currentWatchlist = $location.search()['watchlist'];
+
+
         /**
          * Get the list of watchlists
          */
@@ -61,41 +65,68 @@
                 console.log('Fetched watchlist data');
                 $scope.watchlists = data.watchLists;
                 //Choose the first watchlist
-                $scope.currentWatchlist = $scope.watchlists[0].id;
+
+                if (!$scope.currentWatchlist || $scope.currentWatchlist == 'null') {
+                    $scope.currentWatchlist = $scope.watchlists[0].id;
+                }
                 $scope.getWatchList();
+                $scope.getWatchlistsWithDetails();
             });
         }
 
+        /*
+         *   Get all the watchlist with details
+         *   This method is used by the all-watchlist screen
+         */
+        $scope.getWatchlistsWithDetails = function() {
+            /* body... */
+            $scope.watchlistsWithDetails = [];
+
+            if ($scope.watchlists) {
+
+                console.log($scope.watchlists);
+
+                for (var i = 0; i < $scope.watchlists.length; i++) {
+                    console.log('Fetching data for mini view' + $scope.watchlists[i].id);
+
+                    $http.get('/api/watchlist/' + $scope.watchlists[i].id).
+                    success(function(data) {
+                        $scope.watchlistsWithDetails.push(data);
+                    });
+                }
+            } else {
+                alert("No watchlist available");
+            }
+        }
+
         $scope.selectWatchlist = function(id) {
-            console.log("selected watchlist" + id);
             $scope.currentWatchlist = id;
             $mdSidenav('nav').toggle();
             $scope.getWatchList();
         }
 
+        /**
+         * get the watchlist details
+         * @return {[type]} [description]
+         */
         $scope.getWatchList = function() {
-            /* body... */
-            $http.get('/api/watchlist/' + $scope.currentWatchlist).
-            success(function(data) {
-                console.log('Fetched watchlist data');
-                $scope.watchlistDetail = data.watchLists;
 
-                //Get Messages for watchlist
-                if ($scope.currentWatchlist) {
-                    $scope.getMessagesForWatchlist();
-                }
+            if ($scope.currentWatchlist) {
+                /* body... */
+                $http.get('/api/watchlist/' + $scope.currentWatchlist).
+                success(function(data) {
+                    console.log('Fetched watchlist data');
+                    $scope.watchlistDetail = data;
 
-            });
+                    //Get Messages for watchlist
+                    if ($scope.currentWatchlist) {
+                        console.log("Fetching messages for watchlist " + $scope.currentWatchlist);
+                        $scope.getWatchListMessages($scope.currentWatchlist);
+                    }
+                });
+            }
         }
 
-        $scope.getAllWatchlistDetails = function() {
-             var allWatchlistDetails = [];
-
-                  for(var watchlist in $scope.watchlists) {
-                    var id = watchlist.id;
-
-                  }
-        }
 
         $scope.getMessagesForWatchlist = function() {
             $http.get('/api/watchlist/messages?watchlistid=' + $scope.currentWatchlist).
@@ -138,8 +169,8 @@
          * @param {[type]}
          */
         function NewWatchlistController($scope, $mdDialog) {
+            $scope.newWatchlist = new Object();
 
-           
             $scope.hide = function() {
                 $mdDialog.hide();
             };
@@ -220,14 +251,39 @@
 
             $http.delete('/api/watchlist/' + $scope.currentWatchlist + '/watchliststockitem/' + symbol)
                 .success(function(data) {
+                    console.log('Deleted stock item');
                     $scope.getWatchList();
                 });
 
         }
 
-        $scope.editStockItem = function(symbol){
-            
+        /**
+         * delete watchlist
+         * @param  {[type]} id [description]
+         * @return {[type]}    [description]
+         */
+        $scope.deleteWatchList = function(id) {
+            $http.delete('/api/watchlist/' + id)
+                .success(function(data) {
+                    console.log('Deleted stock item');
+                    $scope.currentWatchlist = null;
+                });
         }
+
+        /**
+         * gets the messages for a watchlist
+         * @param  {[type]} id [description]
+         * @return {[type]}    [description]
+         */
+        $scope.getWatchListMessages = function(id) {
+            $http.get('/api/watchlist/messages/?watchlistid=' + id)
+                .success(function(data) {
+                    console.log('Fetched Messages');
+                    $scope.messages = data;
+                });
+        }
+
+
 
         $scope.getWatchLists();
         $scope.getWatchList();

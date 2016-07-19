@@ -1,10 +1,10 @@
 package com.manthalabs.portfoliomanager.analytics;
 
-public class Analysis {
+public class Analysis implements Comparable<Analysis> {
 
 	private String message;
 	private boolean suppress;
-	private String priority;
+	private String priority = "1";
 	private String originalTime;
 
 	public String getPriority() {
@@ -41,6 +41,11 @@ public class Analysis {
 
 	public void setSuppress(boolean suppress) {
 		this.suppress = suppress;
+	}
+
+	@Override
+	public int compareTo(Analysis o) {
+		return o.priority.compareTo(this.priority);
 	}
 
 }

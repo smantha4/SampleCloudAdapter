@@ -1,6 +1,5 @@
 package com.manthalabs.portfoliomanager.service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -16,9 +15,12 @@ import com.manthalabs.portfoliomanager.domain.Watchlist;
 import com.manthalabs.portfoliomanager.domain.WatchlistItem;
 import com.manthalabs.portfoliomanager.repository.WatchlistItemRepository;
 import com.manthalabs.portfoliomanager.repository.WatchlistRepository;
+import com.manthalabs.portfoliomanager.util.MiscUtil;
 import com.manthalabs.portfoliomanager.visitor.GainLossCalculator;
+import com.manthalabs.portfoliomanager.visitor.PaulMerimanSuggestions;
 import com.manthalabs.portfoliomanager.web.rest.dto.AddWatchlistStockItem;
 import com.manthalabs.portfoliomanager.web.rest.dto.WatchListStockItemDTO;
+import com.manthalabs.portfoliomanager.web.rest.dto.WatchlistDTO;
 import com.manthalabs.portfoliomanager.web.rest.dto.WatchlistListDTO;
 import com.manthalabs.portfoliomanager.web.rest.dto.WatchlistListDTO.WatchlistNameDTO;
 
@@ -57,29 +59,56 @@ public class WatchlistService {
 	 * @param watchlist
 	 * @return
 	 */
-	public List<WatchListStockItemDTO> getWatchlistStockItems(String watchlist) {
+	public WatchlistDTO getWatchlistStockItems(String watchlist) {
+
+		WatchlistDTO wDTO = new WatchlistDTO();
+
 		Watchlist w = watchlistRepository.findOne(watchlist);
+		wDTO.setWatchlistName(w.getName());
+		wDTO.setIRA(w.isIRA());
 
 		if (w == null || CollectionUtils.isEmpty(w.getStocks())) {
-			return new ArrayList<>();
+			return wDTO;
 		}
 
-		return w.getStocks().parallelStream().map(s -> {
+		final PaulMerimanSuggestions p = new PaulMerimanSuggestions();
+
+		List<WatchListStockItemDTO> watchlistItems = w.getStocks().parallelStream().map(s -> {
 			WatchListStockItemDTO ws = new WatchListStockItemDTO();
 
 			WatchlistItem wi = watchlistItemRepository.findOne(s);
 
 			Quote q = yahooFinanceQuoteService.getQuote(s);
 
-			GainLossCalculator gainLossCalculator = new GainLossCalculator(q);
+			GainLossCalculator gainLossCalculator = new GainLossCalculator(q, w);
 			wi.accept(gainLossCalculator);
 
 			ws.setQty(wi.getQty());
-			ws.setGain(String.valueOf(wi.getOverallGainLoss()));
+			ws.setTotalValue(MiscUtil.RoundTo2Decimals(wi.getQty() * q.getCurrentPriceFloat()));
+			ws.setGain(wi.getOverallGainLoss());
 			ws.setQuote(q);
+
+			p.addSuggestion(ws);
+
 			return ws;
 
 		}).collect(Collectors.toList());
+
+		wDTO.setTotalGainLoss(MiscUtil.RoundTo2Decimals(watchlistItems.stream().mapToDouble(i -> i.getGain()).sum()));
+		wDTO.setTotalAccountValue(
+				MiscUtil.RoundTo2Decimals(watchlistItems.stream().mapToDouble(i -> i.getTotalValue()).sum()));
+
+		watchlistItems.stream().forEach(wi -> {
+			if (wDTO.getTotalAccountValue() > 0 && wi.getTotalValue() > 0) {
+				wi.setAccountPercentage(
+						MiscUtil.RoundTo2Decimals(wi.getTotalValue() / wDTO.getTotalAccountValue() * 100));
+
+			}
+		});
+
+		wDTO.setWatchLists(watchlistItems);
+
+		return wDTO;
 	}
 
 	/**
@@ -108,23 +137,23 @@ public class WatchlistService {
 			if (wi == null) {
 				wi = new WatchlistItem();
 				wi.setStock(addWatchlistStockItem.getSymbol());
-				wi.setQty(addWatchlistStockItem.getQty());
-				wi.setValueWhenAdded(
-						yahooFinanceQuoteService.getQuote(addWatchlistStockItem.getSymbol()).getCurrentPrice());
+				wi.setQty(Double.valueOf(addWatchlistStockItem.getQty()));
+				if (StringUtils.isEmpty(addWatchlistStockItem.getPriceBought())) {
+					wi.setValueWhenAdded(yahooFinanceQuoteService.getQuote(addWatchlistStockItem.getSymbol())
+							.getCurrentPriceFloat());
+				}
 
 				// Add new stock item keeping track of the watch list
 				if (StringUtils.isNotEmpty(addWatchlistStockItem.getQty())) {
 					wi.addQtyItem(watchlist, Float.valueOf(addWatchlistStockItem.getQty()), DateTime.now().toString(),
-							Float.valueOf(yahooFinanceQuoteService.getQuote(addWatchlistStockItem.getSymbol())
-									.getCurrentPrice()));
+							wi.getValueWhenAdded());
 				}
 
 			} else {
 				// Add a new entry
 				if (StringUtils.isNotEmpty(addWatchlistStockItem.getQty())) {
 					wi.addQtyItem(watchlist, Float.valueOf(addWatchlistStockItem.getQty()), DateTime.now().toString(),
-							Float.valueOf(yahooFinanceQuoteService.getQuote(addWatchlistStockItem.getSymbol())
-									.getCurrentPrice()));
+							wi.getValueWhenAdded());
 				}
 			}
 			watchlistItemRepository.save(wi);

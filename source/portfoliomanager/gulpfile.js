@@ -2,6 +2,7 @@
 'use strict';
 
 var gulp = require('gulp'),
+    debug = require('gulp-debug'),
     expect = require('gulp-expect-file'),
     sass = require('gulp-sass'),
     rev = require('gulp-rev'),
@@ -24,6 +25,8 @@ var gulp = require('gulp'),
     angularFilesort = require('gulp-angular-filesort'),
     naturalSort = require('gulp-natural-sort'),
     bowerFiles = require('main-bower-files');
+    
+
 
 var handleErrors = require('./gulp/handleErrors'),
     serve = require('./gulp/serve'),
@@ -98,11 +101,11 @@ gulp.task('inject', ['inject:dep', 'inject:app']);
 gulp.task('inject:dep', ['inject:test', 'inject:vendor']);
 
 gulp.task('inject:app', function () {
-    return gulp.src(config.app + 'index.html')
-        .pipe(inject(gulp.src(config.app + 'app/**/*.js')
-            .pipe(naturalSort())
-            .pipe(angularFilesort()), {relative: true}))
-        .pipe(gulp.dest(config.app));
+    return gulp.src(config.app + 'index.html').pipe(debug())
+        .pipe(inject(gulp.src(config.app + 'app/**/*.js').pipe(debug())
+            .pipe(naturalSort()).pipe(debug())
+            .pipe(angularFilesort()), {relative: true})).pipe(debug())
+        .pipe(debug(gulp.dest(config.app))).pipe(debug());
 });
 
 gulp.task('inject:vendor', function () {
