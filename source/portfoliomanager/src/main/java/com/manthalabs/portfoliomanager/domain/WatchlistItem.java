@@ -8,6 +8,7 @@ import org.joda.time.DateTime;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.manthalabs.portfoliomanager.util.DateTimeUtil;
 import com.manthalabs.portfoliomanager.visitor.WatchlistStockItemVisitor;
 
 @Document(collection = "watchlistItem")
@@ -22,8 +23,6 @@ public class WatchlistItem extends AbstractAuditingEntity implements Serializabl
 
 	private double valueWhenAdded;
 
-	private double qty;
-
 	private double shortTermGainLoss;
 
 	private double longTemGainLoss;
@@ -31,6 +30,8 @@ public class WatchlistItem extends AbstractAuditingEntity implements Serializabl
 	private String lastUpdatedDDTM;
 
 	private double marketValue;
+
+	private double purchaseValue;
 
 	private Set<WatchlistQtyLineItem> qtyLineItems = new HashSet<>();
 
@@ -43,6 +44,15 @@ public class WatchlistItem extends AbstractAuditingEntity implements Serializabl
 			WatchlistQtyLineItem w = new WatchlistQtyLineItem(qty, date, priceAtPurchase, watchlist);
 			qtyLineItems.add(w);
 		}
+
+	}
+
+	public void setPurchaseValue(double purchaseValue) {
+		this.purchaseValue = purchaseValue;
+	}
+
+	public double getPurchaseValue() {
+		return purchaseValue;
 	}
 
 	public void setMarketValue(double marketValue) {
@@ -70,11 +80,7 @@ public class WatchlistItem extends AbstractAuditingEntity implements Serializabl
 	}
 
 	public double getQty() {
-		return qty;
-	}
-
-	public void setQty(double qty) {
-		this.qty = qty;
+		return this.getQtyLineItems().stream().mapToDouble(q -> q.qty).sum();
 	}
 
 	public double getShortTermGainLoss() {
@@ -104,6 +110,16 @@ public class WatchlistItem extends AbstractAuditingEntity implements Serializabl
 	public double getOverallGainLoss() {
 		return longTemGainLoss + shortTermGainLoss;
 
+	}
+
+	private double overallGainLossPerc;
+
+	public double getOverallGainLossPerc() {
+		return this.overallGainLossPerc;
+	}
+
+	public void setOverallGainLossPerc(double overallGainLossPerc) {
+		this.overallGainLossPerc = overallGainLossPerc;
 	}
 
 	public String getStock() {
@@ -148,7 +164,7 @@ public class WatchlistItem extends AbstractAuditingEntity implements Serializabl
 		}
 
 		public boolean isLongTerm() {
-			DateTime dt = DateTime.parse(getDateBought());
+			DateTime dt = DateTimeUtil.parseDate(getDateBought());
 			return DateTime.now().minusYears(1).isAfter(dt);
 		}
 

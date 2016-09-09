@@ -51,6 +51,25 @@ Unit tests are run by [Karma][] and written with [Jasmine][]. They're located in
     gulp test
 
 
+## Docker build
+docker login
+mvn clean package docker:build -DpushImage
+
+```
+<servers>
+  <server>
+    <id>docker-hub</id>
+    <username>foo</username>
+    <password>secret-password</password>
+    <configuration>
+      <email>foo@foo.bar</email>
+    </configuration>
+  </server>
+</servers
+
+```
+
+
 
 ## Continuous Integration
 

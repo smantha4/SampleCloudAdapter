@@ -1,0 +1,55 @@
+<div ng-controller="MarketviewController" ng-cloak>
+    <md-content class="md-padding">
+        <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+            <md-nav-item md-nav-click="goto('page1')" name="page1">US Sectors</md-nav-item>
+            <md-nav-item md-nav-click="goto('page2')" name="page2">International Markets</md-nav-item>
+            <md-nav-item md-nav-click="goto('page3')" name="page3">Commodities</md-nav-item>
+            <!-- these require actual routing with ui-router or ng-route, so they won't work in the demo
+      <md-nav-item md-nav-sref="app.page4" name="page4">Page Four</md-nav-item>
+      <md-nav-item md-nav-href="#page5" name="page5">Page Five</md-nav-item>
+      -->
+        </md-nav-bar>
+        <div class="ext-content">
+            <div ng-show="currentNavItem == 'page1'">
+                <!-- TradingView Widget BEGIN -->
+                <h1> Apple stock chart</h1>
+                <!-- TradingView Widget BEGIN -->
+                <div id="tv-medium-widget-3bb48"></div>
+                <script type="text/javascript" src="https://s3.amazonaws.com/tradingview/tv.js"></script>
+                <script type="text/javascript">
+                new TradingView.MediumWidget({
+                    "container_id": "tv-medium-widget-3bb48",
+                    "symbols": [
+                        [
+                            "Apple",
+                            "QQQ "
+                        ],
+                        [
+                            "Vangaurd Enrge",
+                            "VDE"
+                        ],
+                        [
+                            "Yahoo!",
+                            "YHOO"
+                        ]
+                    ],
+                    "gridLineColor": "#e9e9ea",
+                    "fontColor": "#83888D",
+                    "underLineColor": "#dbeffb",
+                    "trendLineColor": "#4bafe9",
+                    "width": "1000px",
+                    "height": "350px",
+                    "tradeItWidget": false,
+                    "locale": "en"
+                });
+                </script>
+                <!-- TradingView Widget END -->
+                </script>
+                <!-- TradingView Widget END -->
+                </script>
+                <!-- TradingView Widget END -->
+            </div>
+            <div ng-show="currentNavItem == 'page2'">Page2</div>
+            <div ng-show="currentNavItem == 'page3'">Page3</div>
+        </div>
+    </md-content>

@@ -1,5 +1,7 @@
 package com.manthalabs.portfoliomanager.domain;
 
+import org.apache.commons.lang3.StringUtils;
+
 public class Quote {
 	private String name;
 	private String ticker;
@@ -27,6 +29,25 @@ public class Quote {
 
 	public String getChange() {
 		return change;
+	}
+
+	public double getChangeDouble() {
+
+		if (StringUtils.isNotBlank(change)) {
+			String sign = StringUtils.substring(change, 0, 1);
+
+			String changeNUmber = StringUtils.remove(change, sign);
+
+			Double d = Double.valueOf(changeNUmber);
+
+			if ("-".equals(sign)) {
+				return -1 * d;
+			} else {
+				return d;
+			}
+		}
+		return 0;
+
 	}
 
 	public void setChange(String change) {
@@ -98,11 +119,15 @@ public class Quote {
 	}
 
 	public float getCurrentPriceFloat() {
-		return Float.valueOf(currentPrice);
+		return currentPrice != null ? Float.valueOf(currentPrice) : 0;
 	}
 
 	public void setCurrentPrice(String currentPrice) {
 		this.currentPrice = currentPrice;
+	}
+
+	public double getChangePercentage() {
+		return getChangeDouble() / getCurrentPriceFloat() * 100;
 	}
 
 }

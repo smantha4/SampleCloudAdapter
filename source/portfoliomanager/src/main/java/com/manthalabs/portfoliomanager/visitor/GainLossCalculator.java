@@ -22,6 +22,9 @@ public class GainLossCalculator implements WatchlistStockItemVisitor {
 
 	@Override
 	public void visit(WatchlistItem w) {
+		if (w == null) {
+			return;
+		}
 		double longTermGainloss = w.getQtyLineItems().stream().filter(i -> i.getWatchlist().equals(wl.getId()))
 				.mapToDouble(i -> {
 
@@ -53,8 +56,23 @@ public class GainLossCalculator implements WatchlistStockItemVisitor {
 		log.info("long term gain for " + w.getStock() + " is " + shortTermGainLoss);
 
 		w.setShortTermGainLoss(MiscUtil.RoundTo2Decimals(shortTermGainLoss));
-		w.setQty(w.getQtyLineItems().stream().filter(i -> i.getWatchlist().equals(wl.getId()))
-				.mapToDouble(i -> i.getQty()).sum());
+
+		double purshaseValue = w.getQtyLineItems().stream().filter(i -> i.getWatchlist().equals(wl.getId()))
+				.mapToDouble(i -> {
+					return i.getPriceAtPurchase() * i.getQty();
+				}).sum();
+
+		double marketValue = w.getQtyLineItems().stream().filter(i -> i.getWatchlist().equals(wl.getId()))
+				.mapToDouble(i -> {
+					return q.getCurrentPriceFloat() * i.getQty();
+				}).sum();
+
+		if (purshaseValue > 0) {
+			w.setOverallGainLossPerc(MiscUtil.RoundTo2Decimals((w.getOverallGainLoss() / purshaseValue) * 100));
+			w.setPurchaseValue(MiscUtil.RoundTo2Decimals(purshaseValue));
+		}
+
+		w.setMarketValue(MiscUtil.RoundTo2Decimals(marketValue));
 
 	}
 }

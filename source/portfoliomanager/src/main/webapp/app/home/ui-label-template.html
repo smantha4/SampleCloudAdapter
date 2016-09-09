@@ -1,0 +1,9 @@
+<div>
+    <div class="md-caption">{{label}}</div>
+    <div ng-if="showGainColor">
+        <span ng-class="value > 0 ? 'palette-Green-700 text' : 'palette-Red-700 text'"><b>{{value}}</b></span>
+    </div>
+    <div ng-if="!showGainColor">
+        <b>{{value}}</b>
+    </div>
+</div>

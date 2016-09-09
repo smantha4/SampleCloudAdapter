@@ -22,9 +22,23 @@ public class WatchListItemPriceChange implements WatchlistItemAnalysisRule {
 
 		Quote q = yahooFinanceQuoteService.getQuote(wi.getStock());
 
-		if (Float.valueOf(q.getChange()) > 2) {
+		if (q.getChangePercentage() > 2) {
 
 			analysisResults.addAnalysis(new Analysis(wi.getStock() + " as risen more that 2% today"));
 		}
+
+		float currentPrice = q.getCurrentPriceFloat();
+
+		if (wi.getValueWhenAdded() > 0) {
+			double priceDiff = currentPrice - wi.getValueWhenAdded();
+			double priceChngPerc = priceDiff / wi.getValueWhenAdded() * 100;
+
+			if (Math.abs(priceChngPerc) > 10) {
+				analysisResults.addAnalysis(
+						new Analysis(wi.getStock() + " price changed 10% since it was added to watchlist"));
+
+			}
+		}
+
 	}
 }

@@ -1,17 +1,31 @@
 <md-content class="layout-column" layout-padding layout-wrap>
-    <md-input-container>
-        <label>stock</label>
-        <input type="text" ng-model="newWatchlistem.symbol">
-    </md-input-container>
-    <md-input-container>
-        <label>Qty</label>
-        <input type="text" ng-model="newWatchlistem.qty">
-    </md-input-container>
-    <md-input-container>
-        <label>Price bought</label>
-        <input type="text" ng-model="newWatchlistem.priceBought">
-    </md-input-container>
-    <md-datepicker ng-model="newWatchlistem.datebought" required="true">
-    </md-datepicker>
-    <md-button class="md-raised" ng-click="save()" md-ripple-size="full">save</md-button>
+    <div class="layout-row">
+        <md-input-container>
+            <label>stock</label>
+            <input type="text" ng-model="newWatchlistem.symbol">
+        </md-input-container>
+        <md-radio-group ng-model="addstocktype">
+            <md-radio-button value="Watch" class="md-primary">Watch</md-radio-button>
+            <md-radio-button value="Purchase"> Purchase </md-radio-button>
+        </md-radio-group>
+    </div>
+    <div class="layout-row">
+        <div ng-show="addstocktype=='Purchase'">
+            <md-input-container>
+                <label>Qty</label>
+                <input type="text" ng-model="newWatchlistem.qty">
+            </md-input-container>
+            <md-input-container>
+                <label>Price bought</label>
+                <input type="text" ng-model="newWatchlistem.priceBought">
+            </md-input-container>
+            <md-datepicker ng-model="newWatchlistem.dateBought" md-placeholder="Enter date" required="true">
+            </md-datepicker>
+        </div>
+        <div ng-show="addstocktype=='Watch'">
+            <md-datepicker ng-model="newWatchlistem.dateBought" md-placeholder="Watch date" required="true">
+            </md-datepicker>
+        </div>
+    </div>
+    <md-button class="md-raised md-primary" ng-click="save()" md-ripple-size="full">save</md-button>
 </md-content>

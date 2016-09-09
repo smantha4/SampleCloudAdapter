@@ -1,0 +1,29 @@
+<div class="md-margin layout-column  md-padding" flex>
+    <div class="md-padding palette-Lime-300 bg">
+        <text class="md-title">{{watchlist.watchlistName}}</text>
+        <text class="md-caption"> Gain/Loss: {{watchlist.totalGainLoss}}</text>
+        <text class="md-caption"> Tot: {{watchlist.totalAccountValue}}</text>
+    </div>
+    <table class="table  palette-Blue-Grey-100 bg">
+        <tr>
+            <th>symbol</th>
+            <th>price</th>
+            <th>~</th>
+            <th>Qty</th>
+            <th>+/-</th>
+            <th>Tot</th>
+            <th>%</th>
+        </tr>
+        <tr ng-repeat="watchlistitem in watchlist.watchLists">
+            <td>{{watchlistitem.quote.ticker}}</td>
+            <td>{{watchlistitem.quote.currentPrice}}</td>
+            <td ng-class="watchlistitem.quote.currentPrice > 0 ? 'palette-Green-700 text' : 'palette-Red-700 text'">{{watchlistitem.quote.change}}$</td>
+            <td>{{watchlistitem.qty}}</td>
+            <td>
+                <span ng-class="watchlistitem.gain > 0 ? 'palette-Green-700 text' : 'palette-Red-700 text'">{{watchlistitem.gain}}</span>
+            </td>
+            <td>{{watchlistitem.totalValue}}</td>
+            <td>{{watchlistitem.accountPercentage}}</td>
+        </tr>
+    </table>
+</div>

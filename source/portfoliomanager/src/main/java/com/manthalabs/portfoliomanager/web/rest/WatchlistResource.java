@@ -117,6 +117,19 @@ public class WatchlistResource {
 
 		watchlistRepository.save(w);
 
+		WatchlistItem wi = watchlistItemRepository.findOne(symbol);
+
+		if (wi != null) {
+			// Remove the watchlist from the line items
+			wi.getQtyLineItems().stream().filter(ii -> ii.getWatchlist().equals(id))
+					.forEach(ii -> wi.getQtyLineItems().remove(ii));
+			watchlistItemRepository.save(wi);
+		}
+
+		if (wi.getQtyLineItems().isEmpty()) {
+			watchlistItemRepository.delete(symbol);
+		}
+
 		return new ResponseEntity<String>("{\"result\":\"success\"}", HttpStatus.OK);
 
 	}

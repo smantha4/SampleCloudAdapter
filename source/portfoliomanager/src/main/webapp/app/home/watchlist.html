@@ -48,16 +48,25 @@
             </div>
             <table class="md-padding palette-Blue-Grey-100 bg table" ng-repeat="detail in watchlistDetail.watchLists">
                 <tr>
-                    <td class="md-headline">{{detail.quote.ticker}}</td>
-                    <td class="md-headline">{{detail.quote.name}}</td>
-                    <td class="md-headline">{{detail.quote.currentPrice}}</td>
+                    <td>
+                        <ui-label-large label="symbol" value='detail.quote.ticker'></ui-label-large>
+                    </td>
+                    <td>
+                        <ui-label-large label="name" value='detail.quote.name'></ui-label-large>
+                    </td>
+                    <td>
+                        <ui-label-large label="price" value='detail.quote.currentPrice'></ui-label-large>
+                    </td>
                     <td class="md-headline" ng-class="detail.quote.currentPrice > 0 ? 'palette-Green-700 text' : 'palette-Red-700 text'">{{detail.quote.change}}$</td>
                     <td>
-                        <md-button class="md-icon-button" style=" font-size: 18px;" ng-click="deleteStockItem(detail.quote.ticker)" confirm="Are you sure, you want to remove stock {{detail.quote.ticker}}">
-                            <i class="material-icons">delete</i></md-button>
+                        <md-button class="md-icon-button" ng-click="deleteStockItem(detail.quote.ticker)">
+                            <i class="material-icons">delete</i>
                         </md-button>
                         <md-button class="md-icon-button" ng-click="editStockItem()">
                             <i class="material-icons">edit</i>
+                        </md-button>
+                         <md-button class="md-icon-button" ng-click="editStockItem()">
+                            <i class="material-icons">list</i>
                         </md-button>
                     </td>
                 </tr>
@@ -74,29 +83,51 @@
                         <span ng-show="moderate">Moderate Rec: {{detail.recPecModerate}}%</span>
                         <span ng-show="conservative">Conservative Rec: {{detail.recPecConservative}}%</span>
                     </td>
+                    <td>
+                        <ui-label label="Market value" value="detail.marketValue"></ui-label>
+                    </td>
+                    <td>
+                        <ui-label label="Purchase value" value="detail.purchaseValue"></ui-label>
+                    </td>
+                    <td ng-show="detail.gainlossPerct != 0">
+                        <ui-label label="Gain Perc" show-gain-color="true" value="detail.gainlossPerct"></ui-label>
+                    </td>
+                    
                 </tr>
                 <tr>
-                    <td><span class="md-caption">low:</span>{{detail.quote.daysLow}}</td>
-                    <td><span class="md-caption">high:</span>{{detail.quote.daysHigh}}</td>
-                    <td><span class="md-caption">mCap:</span>{{detail.quote.marketCapitalization}}</td>
-                    <td><span class="md-caption">DY:</span>{{detail.quote.dividendYield}}</td>
-                </tr>
-                <tr>
+                    <td>
+                        <ui-label label="Day low" value="detail.quote.daysLow"></ui-label>
+                    </td>
+                    <td>
+                        <ui-label label="Day high" value="detail.quote.daysHigh"></ui-label>
+                    </td>
+                    <td>
+                        <ui-label label="Market Cap" value="detail.quote.marketCapitalization"></ui-label>
+                    </td>
+                    <td>
+                        <ui-label label="Dividend yield" value="detail.quote.dividendYield"></ui-label>
+                    </td>
+                    <td>
+                        <ui-label label="Watch Date" value="detail.watchDate"></ui-label>
+                    </td>
+                    <td>
+                        <ui-label label="Watch Price" value="detail.watchPrice"></ui-label>
+                    </td>
                 </tr>
             </table>
         </div>
-        <md-button class="md-raised md-primary"  ng-click="addToWatchlist()"> Add Stock
+        <md-button class="md-raised md-primary" ng-click="addToWatchlist()"> Add Stock
         </md-button>
         <md-button class="md-warn md-raised" ng-click="deleteWatchList(currentWatchlist)">
             Delete Watchlist
         </md-button>
     </md-content>
     <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" md-component-id="right" class="md-sidenav-right md-whiteframe-z1 palette-Light-Blue-800">
-        <md-content class="layout-column" class="md-padding md-margin">
+        <md-content class="layout-column">
             <div layout="row" layout-align="center center">
                 <text class="md-headline" layout-align="center center">Messages</text>
             </div>
-            <md-list class="palette-Blue-800 text">
+            <md-list class="palette-Blue-800 text md-dense md-margin">
                 <md-list-item class="md-1-line md-whiteframe-z1" ng-repeat="m in messages.messages">
                     <div class="md-list-item-text">{{m.message}}</div>
                 </md-list-item>
