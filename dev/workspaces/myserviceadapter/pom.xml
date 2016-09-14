@@ -1,0 +1,232 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.servicemesh</groupId>
+	<artifactId>com.servicemesh.myserviceadapter</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>bundle</packaging>
+
+	<name>com.servicemesh.myserviceadapter</name>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<agility.api.version>10.2.4.1005</agility.api.version>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+
+	<distributionManagement>
+		<repository>
+			<id>bintray-csc-opensource</id>
+			<name>CSC-opensource</name>
+			<url>https://api.bintray.com/maven/csc/opensource/agility.platform-sdk/;publish=1;override=1</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>servicemesh-artifactory-snapshots</name>
+			<url>http://repo.servicemesh.com:8081/artifactory/libs-snapshot-local</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-framework-bom</artifactId>
+				<version>4.0.1.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<repositories>
+		<repository>
+			<id>csc-opensource-repo</id>
+			<url>https://dl.bintray.com/csc/opensource</url>
+		</repository>
+	</repositories>
+
+
+	<dependencies>
+
+		<!-- csc dependencies -->
+		<dependency>
+			<groupId>com.servicemesh</groupId>
+			<artifactId>agility.api</artifactId>
+			<version>${agility.api.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.servicemesh</groupId>
+			<artifactId>agility.core</artifactId>
+			<version>${agility.api.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.servicemesh</groupId>
+			<artifactId>agility.io</artifactId>
+			<version>${agility.api.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.servicemesh</groupId>
+			<artifactId>agility.cloud.sdk</artifactId>
+			<version>${agility.api.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.servicemesh</groupId>
+			<artifactId>agility.service.sdk</artifactId>
+			<version>${agility.api.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- OSGI dependency -->
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.core</artifactId>
+			<version>6.0.0</version>
+		</dependency>
+		<!-- Third party dependencies -->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>1.10.19</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-expression</artifactId>
+		</dependency>
+		
+		
+		
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+
+		<!-- Findbugs -->
+		<dependency>
+			<groupId>org.codehaus.mojo</groupId>
+			<artifactId>findbugs-maven-plugin</artifactId>
+			<version>3.0.4</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<manifestLocation>META-INF</manifestLocation>
+					<instructions>
+						<Import-Package>com.jcraft.jsch,
+							com.servicemesh.agility.api;version="3.1.0",
+							com.servicemesh.agility.api.script,
+							com.servicemesh.agility.sdk.cloud.helper;version="3.1.0",
+							com.servicemesh.agility.sdk.cloud.msgs;version="3.1.0",
+							com.servicemesh.agility.sdk.cloud.spi;version="3.1.0",
+							com.servicemesh.core.async;version="1.0.0",
+							com.servicemesh.core.collections;version="1.0.0",
+							com.servicemesh.core.collections.hash;version="1.0.0",
+							com.servicemesh.core.collections.heap;version="1.0.0",
+							com.servicemesh.core.collections.list;version="1.0.0",
+							com.servicemesh.core.collections.search;version="1.0.0",
+							com.servicemesh.core.collections.sort;version="1.0.0",
+							com.servicemesh.core.collections.vector;version="1.0.0",
+							com.servicemesh.core.messaging;version="1.0.0",
+							com.servicemesh.core.reactor;version="1.0.0",
+							com.servicemesh.io.http,
+							org.apache.log4j;version="1.2.17"
+						</Import-Package>
+						<Bundle-Activator>com.servicemesh.myserviceadapter.MyAdapter</Bundle-Activator>
+						<Bundle-Version>1.0.0</Bundle-Version>
+						<Bundle-Vendor>1.0.0</Bundle-Vendor>
+						<Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
+						<Bundle-Name>1.0.0</Bundle-Name>
+						<Embed-Dependency>*;scope=compile|runtime</Embed-Dependency>
+						<Embed-Transitive>true</Embed-Transitive>
+						<Bundle-ClassPath>.,{maven-dependencies}</Bundle-ClassPath>
+						<Private-Package>com.servicemesh.myserviceadapter.*</Private-Package>
+						<Include-Resource>src/main/resources</Include-Resource>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>2.5.1</version>
+					<configuration>
+						<source>${maven.compiler.source}</source>
+						<target>${maven.compiler.target}</target>
+						<optimize>true</optimize>
+						<verbose>true</verbose>
+						<maxmem>256</maxmem>
+					</configuration>
+				</plugin>
+				
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-release-plugin</artifactId>
+					<version>2.4.2</version>
+					<configuration>
+						<tagNameFormat>@{project.version}</tagNameFormat>
+						<autoVersionSubmodules>true</autoVersionSubmodules>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<version>2.10.3</version>
+					<configuration>
+						<additionalparam>-Xdoclint:none</additionalparam>
+					</configuration>
+					<executions>
+						<execution>
+							<id>generateJavaDoc</id>
+							<goals>
+								<goal>jar</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+
+			</plugins>
+		</pluginManagement>
+	</build>
+
+</project>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="edu.umd.cs.findbugs.workflow.CloudSyncAndReport"/>
+<fullyQualifiedTypeName name="com.servicemesh.agility.sdk.cloud.spi.CloudAdapter"/>
+<fullyQualifiedTypeName name="com.servicemesh.com.servicemesh.myserviceadapter.MyAdapter"/>
+<fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
+<fullyQualifiedTypeName name="org.springframework.context.annotation.ComponentScan"/>
+<fullyQualifiedTypeName name="com.servicemesh.com.servicemesh.myserviceadapter.operations.CredentialOperations"/>
+<fullyQualifiedTypeName name="com.servicemesh.com.servicemesh.myserviceadapter.operations.ImageOperations"/>
+<fullyQualifiedTypeName name="com.servicemesh.com.servicemesh.myserviceadapter.operations.OperationsFactory"/>
+<fullyQualifiedTypeName name="com.servicemesh.com.servicemesh.myserviceadapter.sync.StorageSyncHandler"/>
+<fullyQualifiedTypeName name="com.servicemesh.com.servicemesh.myserviceadapter.sync.SyncHandlerFactory"/>
+<fullyQualifiedTypeName name="com.servicemesh.com.servicemesh.myserviceadapter.sync.AddressRangeSyncHandler"/>
+<fullyQualifiedTypeName name="com.servicemesh.com.servicemesh.myserviceadapter.sync.CloudSyncHandler"/>
+<fullyQualifiedTypeName name="com.servicemesh.com.servicemesh.myserviceadapter.sync.CredentialSyncHandler"/>
+<fullyQualifiedTypeName name="com.servicemesh.com.servicemesh.myserviceadapter.sync.ImageSyncHandler"/>
+<fullyQualifiedTypeName name="com.servicemesh.com.servicemesh.myserviceadapter.sync.InstanceSyncHandler"/>
+<fullyQualifiedTypeName name="com.servicemesh.com.servicemesh.myserviceadapter.sync.LocationSyncHandler"/>
+<fullyQualifiedTypeName name="com.servicemesh.com.servicemesh.myserviceadapter.sync.ModelSyncHandler"/>
+<fullyQualifiedTypeName name="com.servicemesh.com.servicemesh.myserviceadapter.sync.NetworkSyncHandler"/>
+<fullyQualifiedTypeName name="com.servicemesh.com.servicemesh.myserviceadapter.sync.RepositorySyncHandler"/>
+<fullyQualifiedTypeName name="com.servicemesh.com.servicemesh.myserviceadapter.operations.InstanceOperations"/>
+<fullyQualifiedTypeName name="com.servicemesh.com.servicemesh.myserviceadapter.operations.StorageOperations"/>
+<fullyQualifiedTypeName name="com.servicemesh.com.servicemesh.myserviceadapter.operations.StorageSnapshotOperations"/>
+<fullyQualifiedTypeName name="com.servicemesh.agility.sdk.cloud.msgs.RegistrationRequest"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+<fullyQualifiedTypeName name="com.servicemesh.com.servicemesh.myserviceadapter.MyAdapterConfiguration"/>
+</qualifiedTypeNameHistroy>
