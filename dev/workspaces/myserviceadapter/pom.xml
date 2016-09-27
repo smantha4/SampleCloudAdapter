@@ -3,17 +3,18 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.servicemesh</groupId>
-	<artifactId>com.servicemesh.myserviceadapter</artifactId>
+	<artifactId>com.csc.agility.adapters.cloud.sampleadapter</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>bundle</packaging>
 
-	<name>com.servicemesh.myserviceadapter</name>
+	<name>com.csc.agility.adapters.cloud.sampleadapter</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<agility.api.version>10.2.4.1005</agility.api.version>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
+		<spring.version>4.0.1.RELEASE</spring.version>
 	</properties>
 
 	<distributionManagement>
@@ -34,7 +35,7 @@
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-framework-bom</artifactId>
-				<version>4.0.1.RELEASE</version>
+				<version>${spring.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
@@ -170,7 +171,8 @@
 							com.servicemesh.io.http,
 							org.apache.log4j;version="1.2.17"
 						</Import-Package>
-						<Bundle-Activator>com.servicemesh.myserviceadapter.MyAdapter</Bundle-Activator>
+						<!-- Changing this according to to your activator classes -->
+						<Bundle-Activator>${pom.artifactId}.Activator</Bundle-Activator>
 						<Bundle-Version>1.0.0</Bundle-Version>
 						<Bundle-Vendor>1.0.0</Bundle-Vendor>
 						<Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
@@ -178,7 +180,7 @@
 						<Embed-Dependency>*;scope=compile|runtime</Embed-Dependency>
 						<Embed-Transitive>true</Embed-Transitive>
 						<Bundle-ClassPath>.,{maven-dependencies}</Bundle-ClassPath>
-						<Private-Package>com.servicemesh.myserviceadapter.*</Private-Package>
+						<Private-Package>${pom.artifactId}.*</Private-Package>
 						<Include-Resource>src/main/resources</Include-Resource>
 					</instructions>
 				</configuration>

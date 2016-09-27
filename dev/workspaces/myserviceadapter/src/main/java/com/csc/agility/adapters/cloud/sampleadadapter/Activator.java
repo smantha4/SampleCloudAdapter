@@ -1,9 +1,11 @@
-package com.servicemesh.myserviceadapter;
+package com.csc.agility.adapters.cloud.sampleadadapter;
 
 import org.apache.log4j.Logger;
 import org.osgi.framework.BundleContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import com.csc.agility.adapters.cloud.sampleadapter.operations.OperationsFactory;
+import com.csc.agility.adapters.cloud.sampleadapter.sync.SyncHandlerFactory;
 import com.servicemesh.agility.sdk.cloud.msgs.AddressRangeSyncRequest;
 import com.servicemesh.agility.sdk.cloud.msgs.AddressRangeSyncResponse;
 import com.servicemesh.agility.sdk.cloud.msgs.CloudSyncRequest;
@@ -30,8 +32,6 @@ import com.servicemesh.agility.sdk.cloud.spi.IImage;
 import com.servicemesh.agility.sdk.cloud.spi.IInstance;
 import com.servicemesh.agility.sdk.cloud.spi.IStorage;
 import com.servicemesh.agility.sdk.cloud.spi.ISync;
-import com.servicemesh.myserviceadapter.operations.OperationsFactory;
-import com.servicemesh.myserviceadapter.sync.SyncHandlerFactory;
 import com.servicemesh.core.async.AsyncService;
 import com.servicemesh.core.reactor.TimerReactor;
 
@@ -39,7 +39,7 @@ import com.servicemesh.core.reactor.TimerReactor;
  * 
  * Adapter definition class
  */
-public class MyAdapter extends CloudAdapter {
+public class Activator extends CloudAdapter {
 
 	private OperationsFactory operationsFactory;
 
@@ -47,18 +47,18 @@ public class MyAdapter extends CloudAdapter {
 
 	private AnnotationConfigApplicationContext ctx;
 
-	private MyAdapterConfiguration myAdapterConfiguration;
+	private AdapterConfiguration myAdapterConfiguration;
 
-	private static final Logger logger = Logger.getLogger(MyAdapter.class);
+	private static final Logger logger = Logger.getLogger(Activator.class);
 
-	public MyAdapter() {
+	public Activator() {
 		super(TimerReactor.getTimerReactor("MyAdapter"));
 		/* Init the spring beans */
 		initSpringBeans();
 		logger.info("<Template> adapter started");
 	}
 
-	public MyAdapter(AsyncService service) {
+	public Activator(AsyncService service) {
 		super(service);
 
 		logger.info("Initializing spring beans");
@@ -78,7 +78,7 @@ public class MyAdapter extends CloudAdapter {
 
 		syncHandlerFactory = ctx.getBean(SyncHandlerFactory.class);
 		operationsFactory = ctx.getBean(OperationsFactory.class);
-		myAdapterConfiguration = ctx.getBean(MyAdapterConfiguration.class);
+		myAdapterConfiguration = ctx.getBean(AdapterConfiguration.class);
 	}
 
 	@Override
@@ -153,7 +153,7 @@ public class MyAdapter extends CloudAdapter {
 
 	@Override
 	public RegistrationRequest getRegistrationRequest() {
-		MyAdapterRegistrationProvider myAdapterRegistrationProvider = ctx.getBean(MyAdapterRegistrationProvider.class);
+		AdapterRegistrationProvider myAdapterRegistrationProvider = ctx.getBean(AdapterRegistrationProvider.class);
 		return myAdapterRegistrationProvider.getRegistrationRequest();
 	}
 

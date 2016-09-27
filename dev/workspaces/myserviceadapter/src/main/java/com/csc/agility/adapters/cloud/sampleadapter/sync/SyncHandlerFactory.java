@@ -1,4 +1,4 @@
-package com.servicemesh.myserviceadapter.sync;
+package com.csc.agility.adapters.cloud.sampleadapter.sync;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

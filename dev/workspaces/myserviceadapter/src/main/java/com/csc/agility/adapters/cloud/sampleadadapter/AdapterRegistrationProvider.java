@@ -1,4 +1,4 @@
-package com.servicemesh.myserviceadapter;
+package com.csc.agility.adapters.cloud.sampleadadapter;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,12 +10,12 @@ import com.servicemesh.agility.sdk.cloud.msgs.RegistrationRequest;
  * Provides registration details for the adapter
  */
 @Component
-public class MyAdapterRegistrationProvider {
+public class AdapterRegistrationProvider {
 
 	@Autowired
-	private MyAdapterConfiguration myAdapterConfiguration;
+	private AdapterConfiguration myAdapterConfiguration;
 	
-	private static final Logger logger = Logger.getLogger(MyAdapterRegistrationProvider.class);
+	private static final Logger logger = Logger.getLogger(AdapterRegistrationProvider.class);
 
 
 	public RegistrationRequest getRegistrationRequest() {

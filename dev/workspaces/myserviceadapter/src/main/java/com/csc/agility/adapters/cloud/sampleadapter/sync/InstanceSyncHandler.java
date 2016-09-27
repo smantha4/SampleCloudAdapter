@@ -1,4 +1,4 @@
-package com.servicemesh.myserviceadapter.sync;
+package com.csc.agility.adapters.cloud.sampleadapter.sync;
 
 import org.springframework.stereotype.Component;
 

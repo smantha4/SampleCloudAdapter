@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bnd-LastModified: 1473889144398
 Build-Jdk: 1.8.0_74
 Built-By: srirammantha
-Bundle-Activator: com.servicemesh.myserviceadapter.MyAdapter
+Bundle-Activator: com.csc.agility.adapters.cloud.sampleadadapter.Activator
 Bundle-ClassPath: .,org.osgi.core-6.0.0.jar,mockito-all-1.10.19.jar,comm
  ons-logging-1.1.1.jar,spring-core-4.0.1.RELEASE.jar,spring-aop-4.0.1.RE
  LEASE.jar,aopalliance-1.0.jar,spring-context-4.0.1.RELEASE.jar,spring-b
@@ -31,7 +31,7 @@ Bundle-ClassPath: .,org.osgi.core-6.0.0.jar,mockito-all-1.10.19.jar,comm
  7.jar,plexus-utils-1.5.6.jar,plexus-build-api-0.0.7.jar
 Bundle-ManifestVersion: 2
 Bundle-Name: 1.0.0
-Bundle-SymbolicName: com.servicemesh.myserviceadapter
+Bundle-SymbolicName: com.csc.agility.adapters.cloud.sampleadapter
 Bundle-Vendor: 1.0.0
 Bundle-Version: 1.0.0
 Created-By: Apache Maven Bundle Plugin
@@ -115,15 +115,18 @@ Embedded-Artifacts: org.osgi.core-6.0.0.jar;g="org.osgi";a="org.osgi.cor
  ",plexus-utils-1.5.6.jar;g="org.codehaus.plexus";a="plexus-utils";v="1.
  5.6",plexus-build-api-0.0.7.jar;g="org.sonatype.plexus";a="plexus-build
  -api";v="0.0.7"
-Export-Package: com.servicemesh.myserviceadapter;uses:="com.servicemesh.
- agility.sdk.cloud.msgs,com.servicemesh.agility.sdk.cloud.spi,com.servic
- emesh.core.async,com.servicemesh.myserviceadapter.operations,com.servic
- emesh.myserviceadapter.sync";version="1.0.0",com.servicemesh.myservicea
- dapter.operations;uses:="com.servicemesh.agility.sdk.cloud.msgs,com.ser
- vicemesh.agility.sdk.cloud.spi,com.servicemesh.core.async";version="1.0
- .0",com.servicemesh.myserviceadapter.sync;uses:="com.servicemesh.agilit
- y.sdk.cloud.msgs,com.servicemesh.agility.sdk.cloud.spi,com.servicemesh.
- core.async,com.servicemesh.core.messaging";version="1.0.0"
+Export-Package: com.csc.agility.adapters.cloud.sampleadadapter;version="1.0.0";
+  uses:="com.servicemesh.agility.sdk.cloud.msgs,
+   com.servicemesh.agility.sdk.cloud.spi,
+   com.servicemesh.core.async,
+   com.servicemesh.myserviceadapter.operations,
+   com.servicemesh.myserviceadapter.sync",
+ com.csc.agility.adapters.cloud.sampleadapter.operations;version="1.0.0";uses:="com.servicemesh.agility.sdk.cloud.msgs,com.servicemesh.agility.sdk.cloud.spi,com.servicemesh.core.async",
+ com.csc.agility.adapters.cloud.sampleadapter.sync;version="1.0.0";
+  uses:="com.servicemesh.agility.sdk.cloud.msgs,
+   com.servicemesh.agility.sdk.cloud.spi,
+   com.servicemesh.core.async,
+   com.servicemesh.core.messaging"
 Import-Package: com.servicemesh.agility.sdk.cloud.msgs;version="3.1.0",c
  om.servicemesh.agility.sdk.cloud.spi;version="3.1.0",com.servicemesh.co
  re.async;version="1.0.0",com.servicemesh.core.messaging;version="1.0.0"

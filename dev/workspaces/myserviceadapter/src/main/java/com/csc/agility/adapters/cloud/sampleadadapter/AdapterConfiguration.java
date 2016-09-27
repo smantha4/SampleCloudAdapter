@@ -1,4 +1,4 @@
-package com.servicemesh.myserviceadapter;
+package com.csc.agility.adapters.cloud.sampleadadapter;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Import;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @Import(AppConfig.class)
-public class MyAdapterConfiguration {
+public class AdapterConfiguration {
 
 	public @Value("${adapter.name}") String adapterName ;
 	public @Value("${adapter.version}") String adapterVersion;

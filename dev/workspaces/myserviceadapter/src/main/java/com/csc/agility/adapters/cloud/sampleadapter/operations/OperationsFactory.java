@@ -1,4 +1,4 @@
-package com.servicemesh.myserviceadapter.operations;
+package com.csc.agility.adapters.cloud.sampleadapter.operations;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

@@ -1,4 +1,4 @@
-package com.servicemesh.myserviceadapter;
+package com.csc.agility.adapters.cloud.sampleadadapter;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,24 +14,24 @@ import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.core.io.Resource;
 
-import com.servicemesh.myserviceadapter.operations.CredentialOperations;
-import com.servicemesh.myserviceadapter.operations.ImageOperations;
-import com.servicemesh.myserviceadapter.operations.InstanceOperations;
-import com.servicemesh.myserviceadapter.operations.InstanceSnapshotOperations;
-import com.servicemesh.myserviceadapter.operations.OperationsFactory;
-import com.servicemesh.myserviceadapter.operations.StorageOperations;
-import com.servicemesh.myserviceadapter.operations.StorageSnapshotOperations;
-import com.servicemesh.myserviceadapter.sync.AddressRangeSyncHandler;
-import com.servicemesh.myserviceadapter.sync.CloudSyncHandler;
-import com.servicemesh.myserviceadapter.sync.CredentialSyncHandler;
-import com.servicemesh.myserviceadapter.sync.ImageSyncHandler;
-import com.servicemesh.myserviceadapter.sync.InstanceSyncHandler;
-import com.servicemesh.myserviceadapter.sync.LocationSyncHandler;
-import com.servicemesh.myserviceadapter.sync.ModelSyncHandler;
-import com.servicemesh.myserviceadapter.sync.NetworkSyncHandler;
-import com.servicemesh.myserviceadapter.sync.RepositorySyncHandler;
-import com.servicemesh.myserviceadapter.sync.StorageSyncHandler;
-import com.servicemesh.myserviceadapter.sync.SyncHandlerFactory;
+import com.csc.agility.adapters.cloud.sampleadapter.operations.CredentialOperations;
+import com.csc.agility.adapters.cloud.sampleadapter.operations.ImageOperations;
+import com.csc.agility.adapters.cloud.sampleadapter.operations.InstanceOperations;
+import com.csc.agility.adapters.cloud.sampleadapter.operations.InstanceSnapshotOperations;
+import com.csc.agility.adapters.cloud.sampleadapter.operations.OperationsFactory;
+import com.csc.agility.adapters.cloud.sampleadapter.operations.StorageOperations;
+import com.csc.agility.adapters.cloud.sampleadapter.operations.StorageSnapshotOperations;
+import com.csc.agility.adapters.cloud.sampleadapter.sync.AddressRangeSyncHandler;
+import com.csc.agility.adapters.cloud.sampleadapter.sync.CloudSyncHandler;
+import com.csc.agility.adapters.cloud.sampleadapter.sync.CredentialSyncHandler;
+import com.csc.agility.adapters.cloud.sampleadapter.sync.ImageSyncHandler;
+import com.csc.agility.adapters.cloud.sampleadapter.sync.InstanceSyncHandler;
+import com.csc.agility.adapters.cloud.sampleadapter.sync.LocationSyncHandler;
+import com.csc.agility.adapters.cloud.sampleadapter.sync.ModelSyncHandler;
+import com.csc.agility.adapters.cloud.sampleadapter.sync.NetworkSyncHandler;
+import com.csc.agility.adapters.cloud.sampleadapter.sync.RepositorySyncHandler;
+import com.csc.agility.adapters.cloud.sampleadapter.sync.StorageSyncHandler;
+import com.csc.agility.adapters.cloud.sampleadapter.sync.SyncHandlerFactory;
 
 /**
  * Spring config file which defines the spring definitions
@@ -44,6 +44,8 @@ import com.servicemesh.myserviceadapter.sync.SyncHandlerFactory;
 public class AppConfig {
 	
 	
+	//Define all the beans that can be auto wired as dependencies
+	
 	@Bean
 	public SyncHandlerFactory getSyncHandlerFactory(){
 		return new SyncHandlerFactory();
@@ -55,8 +57,8 @@ public class AppConfig {
 	}
 	
 	@Bean
-	public MyAdapterConfiguration getMyAdapterConfiguration(){
-		return new MyAdapterConfiguration();
+	public AdapterConfiguration getMyAdapterConfiguration(){
+		return new AdapterConfiguration();
 	}
 	
 	/** Adapter operations **/
@@ -144,8 +146,8 @@ public class AppConfig {
 	}
 	
 	@Bean
-	public MyAdapterRegistrationProvider getMyAdapterRegistrationProvider(){
-		return new MyAdapterRegistrationProvider();
+	public AdapterRegistrationProvider getMyAdapterRegistrationProvider(){
+		return new AdapterRegistrationProvider();
 	}
 	
 	/**
