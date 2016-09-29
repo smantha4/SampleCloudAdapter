@@ -1,4 +1,4 @@
-package com.csc.agility.adapters.cloud.sampleadadapter;
+package com.csc.agility.adapters.cloud.sampleadapter;
 
 import org.apache.log4j.Logger;
 import org.osgi.framework.BundleContext;

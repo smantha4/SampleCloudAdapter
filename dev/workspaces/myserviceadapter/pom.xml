@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.servicemesh</groupId>
+	<groupId>com.csc.agility.adapters.cloud</groupId>
 	<artifactId>com.csc.agility.adapters.cloud.sampleadapter</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>bundle</packaging>
@@ -172,15 +172,15 @@
 							org.apache.log4j;version="1.2.17"
 						</Import-Package>
 						<!-- Changing this according to to your activator classes -->
-						<Bundle-Activator>${pom.artifactId}.Activator</Bundle-Activator>
+						<Bundle-Activator>${project.artifactId}.Activator</Bundle-Activator>
 						<Bundle-Version>1.0.0</Bundle-Version>
 						<Bundle-Vendor>1.0.0</Bundle-Vendor>
-						<Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
+						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
 						<Bundle-Name>1.0.0</Bundle-Name>
 						<Embed-Dependency>*;scope=compile|runtime</Embed-Dependency>
 						<Embed-Transitive>true</Embed-Transitive>
 						<Bundle-ClassPath>.,{maven-dependencies}</Bundle-ClassPath>
-						<Private-Package>${pom.artifactId}.*</Private-Package>
+						<Private-Package>${project.artifactId}.*</Private-Package>
 						<Include-Resource>src/main/resources</Include-Resource>
 					</instructions>
 				</configuration>

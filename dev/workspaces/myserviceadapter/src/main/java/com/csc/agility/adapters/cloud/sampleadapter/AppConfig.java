@@ -1,4 +1,4 @@
-package com.csc.agility.adapters.cloud.sampleadadapter;
+package com.csc.agility.adapters.cloud.sampleadapter;
 
 import java.io.IOException;
 import java.io.InputStream;

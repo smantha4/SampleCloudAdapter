@@ -1,4 +1,4 @@
-package com.csc.agility.adapters.cloud.sampleadadapter;
+package com.csc.agility.adapters.cloud.sampleadapter;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Import;
